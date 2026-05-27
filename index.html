@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Vitarinq, la bague connectee premium pour suivre sommeil, recuperation, activite et signaux vitaux avec elegance."
+      data-i18n-attr="content:meta.description"
+    />
+    <title>Vitarinq | Smart ring premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header" aria-label="Navigation principale" data-i18n-attr="aria-label:nav.aria">
+      <a class="brand" href="#top" aria-label="Vitarinq accueil" data-i18n-attr="aria-label:brand.aria">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Vitarinq</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Sections">
+        <a href="#experience" data-i18n="nav.experience">Expérience</a>
+        <a href="#health" data-i18n="nav.health">Santé</a>
+        <a href="#compare" data-i18n="nav.compare">Comparer</a>
+        <a href="#pricing" data-i18n="nav.preorder">Précommande</a>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menu" type="button">
+          <span></span>
+        </button>
+        <div class="language-toggle" aria-label="Choix de langue" data-i18n-attr="aria-label:language.aria">
+          <button type="button" class="active" data-lang="fr">FR</button>
+          <button type="button" data-lang="en">EN</button>
+        </div>
+        <a class="nav-cta" href="#pricing" data-i18n="nav.reserve">Réserver</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <img src="./assets/vitarinq-product-remastered.png" alt="" />
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow reveal" data-i18n="hero.eyebrow">Smart ring premium</p>
+          <h1 id="hero-title" class="reveal reveal-delay-1">
+            <span data-i18n="hero.titlePart1">Votre santé,</span><br />
+            <span class="gradient-text" data-i18n="hero.titlePart2">lisible dans un geste.</span>
+          </h1>
+          <p class="hero-lede reveal reveal-delay-2" data-i18n="hero.lede">
+            Vitarinq suit sommeil, récupération, rythme cardiaque, oxygène sanguin et activité dans une bague noire
+            polie conçue pour disparaître au doigt et révéler ce qui compte.
+          </p>
+          <div class="hero-actions reveal reveal-delay-3" aria-label="Actions principales" data-i18n-attr="aria-label:hero.actionsAria">
+            <a class="button primary" href="#pricing" data-i18n="hero.primary">Précommander</a>
+            <a class="button secondary" href="#health" data-i18n="hero.secondary">Voir les mesures</a>
+          </div>
+          <div class="trust-strip reveal reveal-delay-4" aria-label="Points forts" data-i18n-attr="aria-label:hero.trustAria">
+            <span data-i18n="hero.trust1">Jusqu'à 7 jours de batterie</span>
+            <span data-i18n="hero.trust2">Dock portable avec batterie intégrée</span>
+            <span data-i18n="hero.trust3">Sans abonnement au lancement</span>
+          </div>
+        </div>
+        <div class="hero-specs" aria-label="Résumé produit" data-i18n-attr="aria-label:hero.specsAria">
+          <span data-i18n="hero.spec1">Titane noir poli</span>
+          <span data-i18n="hero.spec2">Capteurs internes visibles</span>
+          <span data-i18n="hero.spec3">Dock circulaire magnétique</span>
+        </div>
+      </section>
+
+      <section class="proof-band" aria-label="Indicateurs produit" data-i18n-attr="aria-label:proof.aria">
+        <div class="reveal">
+          <span class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
+            </svg>
+          </span>
+          <strong>24<em>/7</em></strong>
+          <span class="proof-label" data-i18n="proof.passive">Mesure passive</span>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 4c-3 0-7 1.5-10 5s-4 7-4 10c3 0 7-1 10-4s4-8 4-11z"/>
+              <line x1="6" y1="19" x2="13" y2="12"/>
+            </svg>
+          </span>
+          <strong>3<em> g</em></strong>
+          <span class="proof-label" data-i18n="proof.light">Profil ultra léger</span>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <span class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3c3.5 4.6 6 8.3 6 11.5a6 6 0 0 1-12 0C6 11.3 8.5 7.6 12 3z"/>
+              <path d="M9 14.5c0 1.7 1.3 3 3 3"/>
+            </svg>
+          </span>
+          <strong>5<em>ATM</em></strong>
+          <span class="proof-label" data-i18n="proof.water">Usage quotidien</span>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <span class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>
+              <path d="M9 12l2.2 2.2L15 10.5"/>
+            </svg>
+          </span>
+          <strong>RGPD</strong>
+          <span class="proof-label" data-i18n="proof.privacy">Données chiffrées</span>
+        </div>
+      </section>
+
+      <section class="section intro" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="experience.eyebrow">Expérience</p>
+          <h2 id="experience-title" data-i18n="experience.title">Un bijou qui travaille en silence.</h2>
+          <p data-i18n="experience.body">
+            L'app transforme les signaux bruts en décisions simples: dormir plus tôt, réduire l'intensité,
+            reprendre l'entraînement ou comprendre une semaine difficile.
+          </p>
+        </div>
+        <figure class="product-editorial reveal-scale">
+          <img
+            src="./assets/vitarinq-ring-remastered.png"
+            alt="Bague connectée noire Vitarinq avec dock de charge ouvert"
+            data-i18n-attr="alt:hero.imageAlt"
+          />
+          <figcaption data-i18n="hero.caption">Bague noire polie, capteurs internes et dock de charge circulaire.</figcaption>
+        </figure>
+        <div class="capability-grid reveal" aria-label="Mesures et fonctions de la bague" data-i18n-attr="aria-label:cap.aria">
+          <article class="cap cat-sleep">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7.2 7.2 0 0 0 9.8 9.8z"/></svg></span>
+            <span class="cap-label" data-i18n="cap.sleep">Sommeil</span>
+          </article>
+          <article class="cap cat-activity">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="4.5" r="1.5" fill="currentColor"/><path d="M7 21l3-6 2-4 3 3 1 5"/><path d="M9 11l-2-2 3-3 3 1 2 3 3 1"/></svg></span>
+            <span class="cap-label" data-i18n="cap.sports">Sport</span>
+          </article>
+          <article class="cap cat-activity">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.6 4.5c1.2 0 2 1.1 2 2.6S8.8 9.7 7.6 9.7 5.6 8.6 5.6 7.1 6.4 4.5 7.6 4.5zm-4 7.5c.9 0 1.6.9 1.6 2s-.7 2-1.6 2-1.6-.9-1.6-2 .7-2 1.6-2zm7.4-1.8c1.4 0 2.4 1.7 2.4 3.6 0 1.7-1.1 2.7-2.4 2.7s-2.4-1-2.4-2.7c0-1.9 1-3.6 2.4-3.6zM16.4 4.5c1.2 0 2 1.1 2 2.6s-.8 2.6-2 2.6-2-1.1-2-2.6.8-2.6 2-2.6zm4 7.5c.9 0 1.6.9 1.6 2s-.7 2-1.6 2-1.6-.9-1.6-2 .7-2 1.6-2zm-7.4 4.6c1.4 0 2.4 1.6 2.4 3.5 0 1.7-1.1 2.4-2.4 2.4s-2.4-.7-2.4-2.4c0-1.9 1-3.5 2.4-3.5z"/></svg></span>
+            <span class="cap-label" data-i18n="cap.steps">Pas</span>
+          </article>
+          <article class="cap cat-stress">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="0.8" fill="currentColor"/><circle cx="15" cy="10" r="0.8" fill="currentColor"/><path d="M8.5 15c1 1 2.2 1.4 3.5 1.4s2.5-.4 3.5-1.4"/></svg></span>
+            <span class="cap-label" data-i18n="cap.stress">Stress</span>
+          </article>
+          <article class="cap cat-heart">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9.2A5.4 5.4 0 0 1 12 5.5 5.4 5.4 0 0 1 21.5 11.8C19 16.5 12 21 12 21z" fill="currentColor" fill-opacity="0.18"/><path d="M7 12h2l1.5-3 2 6 1.5-3h3.5"/></svg></span>
+            <span class="cap-label" data-i18n="cap.heart">Fréq. cardiaque</span>
+          </article>
+          <article class="cap cat-heart">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2-5 3 12 3-9 2 5 2-3h4"/></svg></span>
+            <span class="cap-label">HRV</span>
+          </article>
+          <article class="cap cat-oxygen">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg></span>
+            <span class="cap-label" data-i18n="cap.oxygen">Oxygène sanguin</span>
+          </article>
+          <article class="cap cat-social">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <span class="cap-label" data-i18n="cap.family">Partage famille</span>
+          </article>
+          <article class="cap cat-women">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 3a2.6 2.6 0 0 1 2.5 2.6 2.5 2.5 0 0 1 3.4 3.5 2.5 2.5 0 0 1 0 4.8 2.5 2.5 0 0 1-3.4 3.5A2.6 2.6 0 0 1 12 20a2.6 2.6 0 0 1-2.5-2.6 2.5 2.5 0 0 1-3.4-3.5 2.5 2.5 0 0 1 0-4.8 2.5 2.5 0 0 1 3.4-3.5A2.6 2.6 0 0 1 12 3zm0 5.4a3.6 3.6 0 1 0 0 7.2 3.6 3.6 0 0 0 0-7.2z"/></svg></span>
+            <span class="cap-label" data-i18n="cap.female">Cycle féminin</span>
+          </article>
+          <article class="cap cat-water">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2c3 4.4 5.5 8 5.5 11.5a5.5 5.5 0 0 1-11 0C6.5 10 9 6.4 12 2z"/></svg></span>
+            <span class="cap-label" data-i18n="cap.water">Étanche IP68</span>
+          </article>
+          <article class="cap cat-camera">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M8 6l1.5-2h5L16 6"/><circle cx="12" cy="13" r="3.4"/></svg></span>
+            <span class="cap-label" data-i18n="cap.camera">Déclencheur photo</span>
+          </article>
+          <article class="cap cat-heart tier-indicative">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M6 12h2l1.5-3 2 6 1.5-3h5"/></svg></span>
+            <span class="cap-label">ECG</span>
+          </article>
+          <article class="cap cat-eda tier-indicative">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h3l2-6 3 10 2-7 2 4 2-3h4"/></svg></span>
+            <span class="cap-label">EDA</span>
+          </article>
+          <article class="cap cat-blood tier-indicative">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="6" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="18" cy="12" r="2"/><circle cx="9" cy="18" r="2"/><circle cx="15" cy="18" r="2"/><path d="M12 8v2M8 12l1 4M16 12l-1 4M10 13l4 0"/></svg></span>
+            <span class="cap-label" data-i18n="cap.blood">Composants sanguins</span>
+          </article>
+          <article class="cap cat-pressure tier-indicative">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="M16 4l3-1.5M19 4l-2-1" stroke-width="1.2"/></svg></span>
+            <span class="cap-label" data-i18n="cap.pressure">Pression artérielle</span>
+          </article>
+          <article class="cap cat-glucose tier-indicative">
+            <span class="cap-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 3c2.5 3.6 4.5 6.6 4.5 9.5a4.5 4.5 0 0 1-9 0C7.5 9.6 9.5 6.6 12 3z" fill-opacity="0.3"/><path d="M12 3c2.5 3.6 4.5 6.6 4.5 9.5a4.5 4.5 0 0 1-9 0C7.5 9.6 9.5 6.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="1.4"/></svg></span>
+            <span class="cap-label" data-i18n="cap.glucose">Glycémie</span>
+          </article>
+        </div>
+
+        <aside class="medical-notice reveal" role="note" aria-labelledby="medical-notice-title">
+          <span class="medical-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l10 18H2z"/>
+              <line x1="12" y1="10" x2="12" y2="14"/>
+              <circle cx="12" cy="17.5" r="0.6" fill="currentColor"/>
+            </svg>
+          </span>
+          <div>
+            <strong id="medical-notice-title" data-i18n="medical.title">Vitarinq n'est pas un dispositif médical</strong>
+            <p data-i18n="medical.body">
+              Le suivi du <b>sommeil, de la fréquence cardiaque, de la HRV et de l'oxygène sanguin</b> offre une précision élevée pour un usage bien-être quotidien.
+              En revanche, les valeurs de <b>pression artérielle et de glycémie</b> sont fournies à titre purement indicatif: elles ne remplacent ni un appareil médical homologué, ni un avis professionnel de santé.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section journey" aria-labelledby="journey-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="journey.eyebrow">Votre journée</p>
+          <h2 id="journey-title" data-i18n="journey.title">Des insights au bon moment, pas des notifications en trop.</h2>
+        </div>
+        <div class="journey-grid">
+          <article class="reveal">
+            <span data-i18n="journey.morningTime">07:12</span>
+            <h3 data-i18n="journey.morningTitle">Réveil</h3>
+            <p data-i18n="journey.morningBody">Score sommeil, température et readiness pour décider si la journée doit être intense ou légère.</p>
+          </article>
+          <article class="reveal reveal-delay-1">
+            <span data-i18n="journey.dayTime">13:40</span>
+            <h3 data-i18n="journey.dayTitle">Journée active</h3>
+            <p data-i18n="journey.dayBody">Fréquence cardiaque, pas et temps actif se mettent à jour sans ouvrir l'application.</p>
+          </article>
+          <article class="reveal reveal-delay-2">
+            <span data-i18n="journey.eveningTime">22:18</span>
+            <h3 data-i18n="journey.eveningTitle">Retour au calme</h3>
+            <p data-i18n="journey.eveningBody">Une recommandation simple pour préserver votre récupération avant la prochaine nuit.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section science" id="health" aria-labelledby="health-title">
+        <div class="science-panel reveal-scale">
+          <div>
+            <p class="eyebrow" data-i18n="health.eyebrow">Capteurs</p>
+            <h2 id="health-title" data-i18n="health.title">Des signaux utiles, pas du bruit.</h2>
+            <p data-i18n="health.body">
+              Vitarinq combine PPG multi-longueurs d'onde, accéléromètre basse consommation et suivi thermique
+              pour produire une vue continue de votre état physiologique.
+            </p>
+          </div>
+          <div class="metric-stack" aria-label="Exemples de mesures" data-i18n-attr="aria-label:health.metricsAria">
+            <div class="metric">
+              <span>HRV</span>
+              <strong>+18%</strong>
+              <small data-i18n="health.metric1">tendance 7 jours</small>
+            </div>
+            <div class="metric">
+              <span data-i18n="health.metricSleep">Sommeil</span>
+              <strong>86</strong>
+              <small data-i18n="health.metric2">score de nuit</small>
+            </div>
+            <div class="metric">
+              <span>Readiness</span>
+              <strong data-i18n="health.metricReady">Optimal</strong>
+              <small data-i18n="health.metric3">entraînement possible</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section app-preview" aria-labelledby="app-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="app.eyebrow">Application</p>
+          <h2 id="app-title" data-i18n="app.title">Une lecture claire, inspirée de vos vrais écrans santé.</h2>
+          <p data-i18n="app.body">
+            L'interface Vitarinq met les indicateurs clés en cartes rapides: sommeil, fréquence cardiaque, HRV,
+            SpO2, stress, activité et micro-examen. Les données sensibles restent lisibles sans transformer
+            l'app en tableau clinique.
+          </p>
+        </div>
+        <div class="phone-stage" aria-label="Aperçu de l'application Vitarinq" data-i18n-attr="aria-label:app.aria">
+          <div class="phone-shell reveal-scale">
+            <div class="phone-top">
+              <strong data-i18n="app.phoneTitle">Santé</strong>
+              <button class="phone-share" type="button" aria-label="Partager" data-i18n-attr="aria-label:app.shareAria">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="18" cy="5" r="2.4"/>
+                  <circle cx="6" cy="12" r="2.4"/>
+                  <circle cx="18" cy="19" r="2.4"/>
+                  <line x1="8.1" y1="10.9" x2="15.9" y2="6.1"/>
+                  <line x1="8.1" y1="13.1" x2="15.9" y2="17.9"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="app-summary">
+              <div class="activity-ring" role="img" aria-label="6896 pas sur 8000">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="ring-track" cx="60" cy="60" r="50"/>
+                  <circle class="ring-fill" cx="60" cy="60" r="50"/>
+                </svg>
+                <div class="ring-text">
+                  <strong>6896</strong>
+                  <span>/8000</span>
+                </div>
+                <svg class="ring-feet" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+                  <path d="M7.6 4.5c1.2 0 2 1.1 2 2.6S8.8 9.7 7.6 9.7 5.6 8.6 5.6 7.1 6.4 4.5 7.6 4.5zm-4 7.5c.9 0 1.6.9 1.6 2s-.7 2-1.6 2-1.6-.9-1.6-2 .7-2 1.6-2zm7.4-1.8c1.4 0 2.4 1.7 2.4 3.6 0 1.7-1.1 2.7-2.4 2.7s-2.4-1-2.4-2.7c0-1.9 1-3.6 2.4-3.6zM16.4 4.5c1.2 0 2 1.1 2 2.6s-.8 2.6-2 2.6-2-1.1-2-2.6.8-2.6 2-2.6zm4 7.5c.9 0 1.6.9 1.6 2s-.7 2-1.6 2-1.6-.9-1.6-2 .7-2 1.6-2zm-7.4 4.6c1.4 0 2.4 1.6 2.4 3.5 0 1.7-1.1 2.4-2.4 2.4s-2.4-.7-2.4-2.4c0-1.9 1-3.5 2.4-3.5z"/>
+                </svg>
+              </div>
+              <ul class="summary-stats">
+                <li>
+                  <span class="dot dot-red" aria-hidden="true"></span>
+                  <span class="stat-label" data-i18n="app.statCalories">Calories</span>
+                  <strong>369.3<em>kcal</em></strong>
+                </li>
+                <li>
+                  <span class="dot dot-blue" aria-hidden="true"></span>
+                  <span class="stat-label" data-i18n="app.statDistance">Distance</span>
+                  <strong>6.00<em>km</em></strong>
+                </li>
+                <li>
+                  <span class="dot dot-purple" aria-hidden="true"></span>
+                  <span class="stat-label" data-i18n="app.statSleep">Sommeil total</span>
+                  <strong>6<em>h</em> 5<em>m</em></strong>
+                </li>
+              </ul>
+            </div>
+
+            <article class="workout-card">
+              <div class="workout-head">
+                <span class="workout-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="13.5" cy="4.5" r="1.5" fill="currentColor"/>
+                    <path d="M6 21l3.5-6 2-3.5 3 2.5 1 5"/>
+                    <path d="M9 11l-2-2 3-3 3 1 2 3 3 1"/>
+                  </svg>
+                </span>
+                <div class="workout-title">
+                  <strong data-i18n="app.workoutTitle">Enregistrement sportif</strong>
+                  <small data-i18n="app.workoutSub">Activité récente</small>
+                </div>
+              </div>
+              <div class="workout-stats">
+                <div>
+                  <span data-i18n="app.workoutDuration">Durée</span>
+                  <strong>133<em>min</em></strong>
+                </div>
+                <div>
+                  <span data-i18n="app.statDistance">Distance</span>
+                  <strong>5.44<em>km</em></strong>
+                </div>
+                <div>
+                  <span data-i18n="app.statCalories">Calories</span>
+                  <strong>334.9<em>kcal</em></strong>
+                </div>
+              </div>
+              <div class="workout-pills">
+                <span class="pill pill-teal" data-i18n="app.pillApp">Entraînement via l'application</span>
+                <span class="pill pill-orange" data-i18n="app.pillDevice">Entraînement sur l'appareil</span>
+              </div>
+            </article>
+
+            <div class="health-grid">
+              <article class="health-card sleep">
+                <header>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7.2 7.2 0 0 0 9.8 9.8z"/></svg>
+                  </span>
+                  <span class="card-title" data-i18n="app.sleep">Sommeil</span>
+                </header>
+                <strong class="card-value">6<em>h</em> 5<em>m</em></strong>
+                <div class="card-bars" aria-hidden="true">
+                  <i style="--h:55%"></i><i style="--h:90%"></i><i style="--h:40%"></i><i style="--h:75%"></i><i style="--h:60%"></i><i style="--h:85%"></i><i style="--h:30%"></i>
+                </div>
+                <small>00:24 - 06:29</small>
+              </article>
+
+              <article class="health-card heart">
+                <header>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 21s-7-4.5-9.5-9.2A5.4 5.4 0 0 1 12 5.5 5.4 5.4 0 0 1 21.5 11.8C19 16.5 12 21 12 21z"/></svg>
+                  </span>
+                  <span class="card-title" data-i18n="app.heart">Fréq. cardiaque</span>
+                </header>
+                <strong class="card-value">79<em>bpm</em></strong>
+                <div class="card-segments segments-5" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i>
+                  <span class="segment-marker" style="--pos:22%"></span>
+                </div>
+                <small>20:00 <span data-i18n="app.normal">Normal</span></small>
+              </article>
+
+              <article class="health-card pressure">
+                <header>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 3a4 4 0 0 1 4 4v4l2 3a3 3 0 0 1-2.5 4.5h-7A3 3 0 0 1 6 14l2-3V7a4 4 0 0 1 4-4z"/></svg>
+                  </span>
+                  <span class="card-title" data-i18n="app.pressure">Pression artérielle</span>
+                </header>
+                <strong class="card-value">117/84<em>mmHg</em></strong>
+                <div class="card-segments segments-6" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                  <span class="segment-marker" style="--pos:20%"></span>
+                </div>
+                <small>20:00 <span data-i18n="app.normal">Normal</span></small>
+              </article>
+
+              <article class="health-card oxygen">
+                <header>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg>
+                  </span>
+                  <span class="card-title" data-i18n="app.oxygen">Oxygène sanguin</span>
+                </header>
+                <strong class="card-value">97<em>%</em></strong>
+                <div class="card-segments segments-duo" aria-hidden="true">
+                  <i></i><i></i>
+                  <span class="segment-marker" style="--pos:78%"></span>
+                </div>
+                <small>20:00 <span data-i18n="app.normal">Normal</span></small>
+              </article>
+
+              <article class="health-card hrv">
+                <header>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-6 3 12 3-9 2 5h5"/></svg>
+                  </span>
+                  <span class="card-title">HRV</span>
+                </header>
+                <strong class="card-value">45<em>ms</em></strong>
+                <svg class="card-graph" viewBox="0 0 120 32" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="0,18 18,14 36,20 54,12 72,16 90,10 108,14 120,22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="18" cy="14" r="1.6"/><circle cx="36" cy="20" r="1.6"/><circle cx="54" cy="12" r="1.6"/><circle cx="72" cy="16" r="1.6"/><circle cx="90" cy="10" r="1.6"/><circle cx="108" cy="14" r="1.6"/>
+                </svg>
+                <small>20:00</small>
+              </article>
+
+              <article class="health-card met">
+                <header>
+                  <span class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2l1.6 5.6L19 9l-4.2 3.6L16 19l-4-3-4 3 1.2-6.4L5 9l5.4-1.4z"/></svg>
+                  </span>
+                  <span class="card-title">MET</span>
+                </header>
+                <strong class="card-value">2.0<em>MET</em></strong>
+                <div class="card-segments segments-3" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                  <span class="segment-marker marker-down" style="--pos:16%"></span>
+                </div>
+                <small>20:00 <span data-i18n="app.lowIntensity">Faible intensité</span></small>
+              </article>
+            </div>
+
+            <nav class="phone-nav" aria-label="Navigation app">
+              <span class="active">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 20s-7-4.5-9.5-9.2A5.4 5.4 0 0 1 12 4.5 5.4 5.4 0 0 1 21.5 10.8C19 15.5 12 20 12 20z"/>
+                  <path d="M12 9v5M9.5 11.5h5"/>
+                </svg>
+                <small data-i18n="app.navHealth">Santé</small>
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <ellipse cx="12" cy="12" rx="7" ry="8"/>
+                </svg>
+                <small data-i18n="app.navDevice">Appareil</small>
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="8" r="3.4"/>
+                  <path d="M5 20c1.2-3.6 4-5 7-5s5.8 1.4 7 5"/>
+                </svg>
+                <small data-i18n="app.navProfile">Profil</small>
+              </span>
+            </nav>
+          </div>
+          <div class="sensor-note reveal">
+            <h3 data-i18n="app.noteTitle">Capteurs visibles, expérience invisible.</h3>
+            <p data-i18n="app.noteBody">
+              Le rendu reprend la bague noire brillante, les fenêtres capteurs internes et le dock rond ouvert.
+              Les accents turquoise, orange et violet viennent directement des écrans d'app pour garder une identité
+              cohérente entre produit et logiciel.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section design" aria-labelledby="design-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="design.eyebrow">Design</p>
+          <h2 id="design-title" data-i18n="design.title">Premium au poignet? Non. Au doigt.</h2>
+        </div>
+        <div class="design-grid">
+          <article class="reveal">
+            <h3 data-i18n="design.card1Title">Titane microbillé</h3>
+            <p data-i18n="design.card1Body">Finition graphite, argent ou champagne avec intérieur hypoallergénique poli miroir.</p>
+          </article>
+          <article class="reveal reveal-delay-1">
+            <h3 data-i18n="design.card2Title">Charge compacte</h3>
+            <p data-i18n="design.card2Body">Un dock rond noir, stable et compact, pensé pour poser la bague sans effort chaque semaine.</p>
+          </article>
+          <article class="reveal reveal-delay-2">
+            <h3 data-i18n="design.card3Title">Fit kit inclus</h3>
+            <p data-i18n="design.card3Body">Chaque précommande reçoit un kit de tailles avant l'expédition finale.</p>
+          </article>
+          <article class="reveal reveal-delay-3">
+            <h3 data-i18n="design.card4Title">App claire</h3>
+            <p data-i18n="design.card4Body">Insights quotidiens, historique, exports et mode privé pour garder la main sur vos données.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compare" id="compare" aria-labelledby="compare-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="compare.eyebrow">Positionnement</p>
+          <h2 id="compare-title" data-i18n="compare.title">Une bague santé premium, claire, élégante et vraiment discrète.</h2>
+          <p data-i18n="compare.body">
+            La page met l'accent sur ce qui rassure avant l'achat: bénéfices santé, mesures concrètes,
+            autonomie, protection des données, sizing et prix early access.
+          </p>
+        </div>
+        <div class="compare-grid">
+          <article class="reveal">
+            <h3 data-i18n="compare.card1Title">Premium d'abord</h3>
+            <p data-i18n="compare.card1Body">Un hero émotionnel, une photographie produit forte et une promesse simple autour de la récupération.</p>
+          </article>
+          <article class="reveal reveal-delay-1">
+            <h3 data-i18n="compare.card2Title">Fiches claires</h3>
+            <p data-i18n="compare.card2Body">Specs, batterie, étanchéité, app, sizing et contenu de la boîte visibles avant la précommande.</p>
+          </article>
+          <article class="reveal reveal-delay-2">
+            <h3 data-i18n="compare.card3Title">International ready</h3>
+            <p data-i18n="compare.card3Body">Bascule FR/EN native pour vendre en Suisse, France et marchés anglophones sans dupliquer le site.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="price-copy reveal">
+          <p class="eyebrow" data-i18n="pricing.eyebrow">Lancement</p>
+          <h2 id="pricing-title" data-i18n="pricing.title">Founders edition</h2>
+          <p data-i18n="pricing.body">
+            Une première série limitée pour valider le produit, construire la communauté et livrer les premiers
+            exemplaires avec un support direct de l'équipe.
+          </p>
+        </div>
+        <div class="price-card reveal-scale">
+          <span class="badge" data-i18n="pricing.badge">Précommande</span>
+          <div class="price">CHF 249</div>
+          <p data-i18n="pricing.sub">Prix indicatif early access, fit kit inclus.</p>
+          <ul>
+            <li data-i18n="pricing.item1">Bague Vitarinq en titane</li>
+            <li data-i18n="pricing.item2">Chargeur magnétique USB-C</li>
+            <li data-i18n="pricing.item3">App iOS/Android au lancement</li>
+            <li data-i18n="pricing.item4">Sans abonnement pendant 12 mois</li>
+          </ul>
+          <a class="button primary wide" href="mailto:hello@vitarinq.com?subject=Precommande%20Vitarinq" data-i18n="pricing.cta">
+            Rejoindre la liste
+          </a>
+        </div>
+      </section>
+
+      <section class="section faq" aria-labelledby="faq-title">
+        <div class="section-heading compact reveal">
+          <p class="eyebrow" data-i18n="faq.eyebrow">Questions</p>
+          <h2 id="faq-title" data-i18n="faq.title">Ce qu'il faut savoir.</h2>
+        </div>
+        <details class="reveal">
+          <summary data-i18n="faq.q1">Est-ce un dispositif médical?</summary>
+          <p data-i18n="faq.a1">Non. Vitarinq est pensé comme un produit bien-être et performance, pas comme un outil de diagnostic.</p>
+        </details>
+        <details class="reveal reveal-delay-1">
+          <summary data-i18n="faq.q2">Quand peut-on livrer?</summary>
+          <p data-i18n="faq.a2">Le site pose une base de précommande. La date finale dépendra du prototype, des tests et de la supply chain.</p>
+        </details>
+        <details class="reveal reveal-delay-2">
+          <summary data-i18n="faq.q3">Pourquoi une bague plutôt qu'une montre?</summary>
+          <p data-i18n="faq.a3">La bague est plus discrète, plus confortable la nuit et mieux placée pour certaines mesures passives.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Vitarinq</span>
+      <a href="mailto:hello@vitarinq.com">hello@vitarinq.com</a>
+      <span>vitarinq.com</span>
+    </footer>
+
+    <script>
+      // ─── Scroll progress bar ───
+      const progressBar = document.querySelector('.scroll-progress');
+      const updateProgress = () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.transform = `scaleX(${h > 0 ? window.scrollY / h : 0})`;
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true });
+
+      // ─── Header scroll state ───
+      const header = document.querySelector('.site-header');
+      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // ─── Mobile menu ───
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('open');
+        navLinks.classList.toggle('mobile-open');
+      });
+      navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          menuToggle.classList.remove('open');
+          navLinks.classList.remove('mobile-open');
+        }
+      });
+
+      // ─── Scroll reveal (IntersectionObserver) ───
+      const revealElements = document.querySelectorAll('.reveal, .reveal-scale');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // ─── Parallax on hero image ───
+      const heroImg = document.querySelector('.hero-media img');
+      if (heroImg && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              const y = window.scrollY;
+              if (y < window.innerHeight) {
+                heroImg.style.transform = `translateY(${y * 0.18}px) scale(${1 + y * 0.0001})`;
+              }
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+      }
+
+      // ─── Smooth anchor links ───
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const target = document.querySelector(a.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+
+      // ─── i18n ───
+      const translations = {
+        fr: {
+          "meta.description": "Vitarinq, la bague connectee premium pour suivre sommeil, recuperation, activite et signaux vitaux avec elegance.",
+          "nav.aria": "Navigation principale",
+          "brand.aria": "Vitarinq accueil",
+          "language.aria": "Choix de langue",
+          "nav.experience": "Expérience",
+          "nav.health": "Santé",
+          "nav.compare": "Comparer",
+          "nav.preorder": "Précommande",
+          "nav.reserve": "Réserver",
+          "hero.eyebrow": "Smart ring premium",
+          "hero.titlePart1": "Votre santé,",
+          "hero.titlePart2": "lisible dans un geste.",
+          "hero.lede": "Vitarinq suit sommeil, récupération, rythme cardiaque, oxygène sanguin et activité dans une bague noire polie conçue pour disparaître au doigt et révéler ce qui compte.",
+          "hero.actionsAria": "Actions principales",
+          "hero.primary": "Précommander",
+          "hero.secondary": "Voir les mesures",
+          "hero.trustAria": "Points forts",
+          "hero.trust1": "Jusqu'à 7 jours de batterie",
+          "hero.trust2": "Dock portable avec batterie intégrée",
+          "hero.trust3": "Sans abonnement au lancement",
+          "hero.imageAlt": "Bague connectée noire Vitarinq avec dock de charge ouvert",
+          "hero.caption": "Bague noire polie, capteurs internes et dock de charge circulaire.",
+          "hero.specsAria": "Résumé produit",
+          "hero.spec1": "Titane noir poli",
+          "hero.spec2": "Capteurs internes visibles",
+          "hero.spec3": "Dock circulaire magnétique",
+          "proof.aria": "Indicateurs produit",
+          "proof.passive": "mesure passive",
+          "proof.light": "profil ultra léger",
+          "proof.water": "usage quotidien",
+          "proof.privacy": "données chiffrées",
+          "experience.eyebrow": "Expérience",
+          "experience.title": "Un bijou qui travaille en silence.",
+          "experience.body": "L'app transforme les signaux bruts en décisions simples: dormir plus tôt, réduire l'intensité, reprendre l'entraînement ou comprendre une semaine difficile.",
+          "cap.aria": "Mesures et fonctions de la bague",
+          "cap.sleep": "Sommeil",
+          "cap.sports": "Sport",
+          "cap.steps": "Pas",
+          "cap.stress": "Stress",
+          "cap.heart": "Fréq. cardiaque",
+          "cap.oxygen": "Oxygène sanguin",
+          "cap.family": "Partage famille",
+          "cap.female": "Cycle féminin",
+          "cap.water": "Étanche IP68",
+          "cap.camera": "Déclencheur photo",
+          "cap.blood": "Composants sanguins",
+          "cap.pressure": "Pression artérielle",
+          "cap.glucose": "Glycémie",
+          "medical.title": "Vitarinq n'est pas un dispositif médical",
+          "medical.body": "Le suivi du sommeil, de la fréquence cardiaque, de la HRV et de l'oxygène sanguin offre une précision élevée pour un usage bien-être quotidien. En revanche, les valeurs de pression artérielle et de glycémie sont fournies à titre purement indicatif: elles ne remplacent ni un appareil médical homologué, ni un avis professionnel de santé.",
+          "journey.eyebrow": "Votre journée",
+          "journey.title": "Des insights au bon moment, pas des notifications en trop.",
+          "journey.morningTime": "07:12",
+          "journey.morningTitle": "Réveil",
+          "journey.morningBody": "Score sommeil, température et readiness pour décider si la journée doit être intense ou légère.",
+          "journey.dayTime": "13:40",
+          "journey.dayTitle": "Journée active",
+          "journey.dayBody": "Fréquence cardiaque, pas et temps actif se mettent à jour sans ouvrir l'application.",
+          "journey.eveningTime": "22:18",
+          "journey.eveningTitle": "Retour au calme",
+          "journey.eveningBody": "Une recommandation simple pour préserver votre récupération avant la prochaine nuit.",
+          "health.eyebrow": "Capteurs",
+          "health.title": "Des signaux utiles, pas du bruit.",
+          "health.body": "Vitarinq combine PPG multi-longueurs d'onde, accéléromètre basse consommation et suivi thermique pour produire une vue continue de votre état physiologique.",
+          "health.metricsAria": "Exemples de mesures",
+          "health.metric1": "tendance 7 jours",
+          "health.metricSleep": "Sommeil",
+          "health.metric2": "score de nuit",
+          "health.metricReady": "Optimal",
+          "health.metric3": "entraînement possible",
+          "app.eyebrow": "Application",
+          "app.title": "Une lecture claire, inspirée de vos vrais écrans santé.",
+          "app.body": "L'interface Vitarinq met les indicateurs clés en cartes rapides: sommeil, fréquence cardiaque, HRV, SpO2, stress, activité et micro-examen. Les données sensibles restent lisibles sans transformer l'app en tableau clinique.",
+          "app.aria": "Aperçu de l'application Vitarinq",
+          "app.shareAria": "Partager",
+          "app.phoneTitle": "Santé",
+          "app.statCalories": "Calories",
+          "app.statDistance": "Distance",
+          "app.statSleep": "Sommeil total",
+          "app.workoutTitle": "Enregistrement sportif",
+          "app.workoutSub": "Activité récente",
+          "app.workoutDuration": "Durée",
+          "app.pillApp": "Entraînement via l'application",
+          "app.pillDevice": "Entraînement sur l'appareil",
+          "app.sleep": "Sommeil",
+          "app.heart": "Fréq. cardiaque",
+          "app.pressure": "Pression artérielle",
+          "app.oxygen": "Oxygène sanguin",
+          "app.normal": "Normal",
+          "app.lowIntensity": "Faible intensité",
+          "app.navHealth": "Santé",
+          "app.navDevice": "Appareil",
+          "app.navProfile": "Profil",
+          "app.noteTitle": "Capteurs visibles, expérience invisible.",
+          "app.noteBody": "Le rendu reprend la bague noire brillante, les fenêtres capteurs internes et le dock rond ouvert. Les accents turquoise, orange et violet viennent directement des écrans d'app pour garder une identité cohérente entre produit et logiciel.",
+          "design.eyebrow": "Design",
+          "design.title": "Premium au poignet? Non. Au doigt.",
+          "design.card1Title": "Titane microbillé",
+          "design.card1Body": "Finition graphite, argent ou champagne avec intérieur hypoallergénique poli miroir.",
+          "design.card2Title": "Charge compacte",
+          "design.card2Body": "Un dock rond noir, stable et compact, pensé pour poser la bague sans effort chaque semaine.",
+          "design.card3Title": "Fit kit inclus",
+          "design.card3Body": "Chaque précommande reçoit un kit de tailles avant l'expédition finale.",
+          "design.card4Title": "App claire",
+          "design.card4Body": "Insights quotidiens, historique, exports et mode privé pour garder la main sur vos données.",
+          "compare.eyebrow": "Positionnement",
+          "compare.title": "Une bague santé premium, claire, élégante et vraiment discrète.",
+          "compare.body": "La page met l'accent sur ce qui rassure avant l'achat: bénéfices santé, mesures concrètes, autonomie, protection des données, sizing et prix early access.",
+          "compare.card1Title": "Premium d'abord",
+          "compare.card1Body": "Un hero émotionnel, une photographie produit forte et une promesse simple autour de la récupération.",
+          "compare.card2Title": "Fiches claires",
+          "compare.card2Body": "Specs, batterie, étanchéité, app, sizing et contenu de la boîte visibles avant la précommande.",
+          "compare.card3Title": "International ready",
+          "compare.card3Body": "Bascule FR/EN native pour vendre en Suisse, France et marchés anglophones sans dupliquer le site.",
+          "pricing.eyebrow": "Lancement",
+          "pricing.title": "Founders edition",
+          "pricing.body": "Une première série limitée pour valider le produit, construire la communauté et livrer les premiers exemplaires avec un support direct de l'équipe.",
+          "pricing.badge": "Précommande",
+          "pricing.sub": "Prix indicatif early access, fit kit inclus.",
+          "pricing.item1": "Bague Vitarinq en titane",
+          "pricing.item2": "Chargeur magnétique USB-C",
+          "pricing.item3": "App iOS/Android au lancement",
+          "pricing.item4": "Sans abonnement pendant 12 mois",
+          "pricing.cta": "Rejoindre la liste",
+          "faq.eyebrow": "Questions",
+          "faq.title": "Ce qu'il faut savoir.",
+          "faq.q1": "Est-ce un dispositif médical?",
+          "faq.a1": "Non. Vitarinq est pensé comme un produit bien-être et performance, pas comme un outil de diagnostic.",
+          "faq.q2": "Quand peut-on livrer?",
+          "faq.a2": "Le site pose une base de précommande. La date finale dépendra du prototype, des tests et de la supply chain.",
+          "faq.q3": "Pourquoi une bague plutôt qu'une montre?",
+          "faq.a3": "La bague est plus discrète, plus confortable la nuit et mieux placée pour certaines mesures passives."
+        },
+        en: {
+          "meta.description": "Vitarinq, the premium smart ring for sleep, recovery, activity and vital trends in an elegant daily form.",
+          "nav.aria": "Main navigation",
+          "brand.aria": "Vitarinq home",
+          "language.aria": "Language switcher",
+          "nav.experience": "Experience",
+          "nav.health": "Health",
+          "nav.compare": "Compare",
+          "nav.preorder": "Preorder",
+          "nav.reserve": "Reserve",
+          "hero.eyebrow": "Premium smart ring",
+          "hero.titlePart1": "Health insight,",
+          "hero.titlePart2": "worn effortlessly.",
+          "hero.lede": "Vitarinq tracks sleep, recovery, heart rate, blood oxygen and activity inside a polished black ring designed to disappear on your finger and reveal what matters.",
+          "hero.actionsAria": "Primary actions",
+          "hero.primary": "Preorder",
+          "hero.secondary": "View metrics",
+          "hero.trustAria": "Product highlights",
+          "hero.trust1": "Up to 7 days battery",
+          "hero.trust2": "Portable dock with built-in battery",
+          "hero.trust3": "No subscription at launch",
+          "hero.imageAlt": "Black Vitarinq smart ring with open charging dock",
+          "hero.caption": "Polished black ring, internal sensors and circular charging dock.",
+          "hero.specsAria": "Product summary",
+          "hero.spec1": "Polished black titanium",
+          "hero.spec2": "Visible internal sensors",
+          "hero.spec3": "Magnetic circular dock",
+          "proof.aria": "Product indicators",
+          "proof.passive": "passive tracking",
+          "proof.light": "ultra-light profile",
+          "proof.water": "daily wear",
+          "proof.privacy": "encrypted data",
+          "experience.eyebrow": "Experience",
+          "experience.title": "Jewelry that works quietly.",
+          "experience.body": "The app turns raw signals into simple decisions: sleep earlier, reduce intensity, resume training or understand a difficult week.",
+          "cap.aria": "Ring measurements and features",
+          "cap.sleep": "Sleep",
+          "cap.sports": "Sports",
+          "cap.steps": "Steps",
+          "cap.stress": "Stress",
+          "cap.heart": "Heart rate",
+          "cap.oxygen": "Blood oxygen",
+          "cap.family": "Family share",
+          "cap.female": "Female care",
+          "cap.water": "IP68 waterproof",
+          "cap.camera": "Remote camera",
+          "cap.blood": "Blood components",
+          "cap.pressure": "Blood pressure",
+          "cap.glucose": "Blood glucose",
+          "medical.title": "Vitarinq is not a medical device",
+          "medical.body": "Sleep, heart rate, HRV and blood oxygen tracking deliver high accuracy for daily wellness use. However, blood pressure and blood glucose readings are provided for indicative purposes only: they do not replace a certified medical device nor professional medical advice.",
+          "journey.eyebrow": "Your day",
+          "journey.title": "Timely insights, not another stream of alerts.",
+          "journey.morningTime": "7:12 AM",
+          "journey.morningTitle": "Wake",
+          "journey.morningBody": "Sleep score, temperature and readiness help you decide whether the day should be intense or light.",
+          "journey.dayTime": "1:40 PM",
+          "journey.dayTitle": "Move",
+          "journey.dayBody": "Heart rate, steps and active time update quietly without opening the app.",
+          "journey.eveningTime": "10:18 PM",
+          "journey.eveningTitle": "Wind down",
+          "journey.eveningBody": "One clear recommendation helps protect recovery before the next night.",
+          "health.eyebrow": "Sensors",
+          "health.title": "Useful signals, not noise.",
+          "health.body": "Vitarinq combines multi-wavelength PPG, a low-power accelerometer and thermal tracking to build a continuous view of your physiological state.",
+          "health.metricsAria": "Example metrics",
+          "health.metric1": "7-day trend",
+          "health.metricSleep": "Sleep",
+          "health.metric2": "night score",
+          "health.metricReady": "Optimal",
+          "health.metric3": "training possible",
+          "app.eyebrow": "Application",
+          "app.title": "A clear health view inspired by real app screens.",
+          "app.body": "The Vitarinq interface turns key indicators into fast cards: sleep, heart rate, HRV, SpO2, stress, activity and quick checkups. Sensitive data stays readable without making the app feel clinical.",
+          "app.aria": "Vitarinq app preview",
+          "app.shareAria": "Share",
+          "app.phoneTitle": "Health",
+          "app.statCalories": "Calories",
+          "app.statDistance": "Distance",
+          "app.statSleep": "Total sleep",
+          "app.workoutTitle": "Workout log",
+          "app.workoutSub": "Recent activity",
+          "app.workoutDuration": "Duration",
+          "app.pillApp": "Training via the app",
+          "app.pillDevice": "Training on the device",
+          "app.sleep": "Sleep",
+          "app.heart": "Heart rate",
+          "app.pressure": "Blood pressure",
+          "app.oxygen": "Blood oxygen",
+          "app.normal": "Normal",
+          "app.lowIntensity": "Low intensity",
+          "app.navHealth": "Health",
+          "app.navDevice": "Device",
+          "app.navProfile": "Profile",
+          "app.noteTitle": "Visible sensors, invisible experience.",
+          "app.noteBody": "The render keeps the glossy black ring, internal sensor windows and open round dock. Turquoise, orange and violet accents come from the app screens so product and software feel like one system.",
+          "design.eyebrow": "Design",
+          "design.title": "Premium on the wrist? No. On the finger.",
+          "design.card1Title": "Micro-blasted titanium",
+          "design.card1Body": "Graphite, silver or champagne finish with a mirror-polished hypoallergenic inner surface.",
+          "design.card2Title": "Compact charging",
+          "design.card2Body": "A stable round black dock designed to make weekly charging effortless.",
+          "design.card3Title": "Sizing kit included",
+          "design.card3Body": "Every preorder receives a sizing kit before final shipment.",
+          "design.card4Title": "Clear app",
+          "design.card4Body": "Daily insights, history, exports and private mode keep you in control of your data.",
+          "compare.eyebrow": "Positioning",
+          "compare.title": "A premium health ring that feels clear, elegant and truly discreet.",
+          "compare.body": "The page focuses on the purchase signals that matter: health benefits, concrete metrics, battery life, privacy, sizing and early-access pricing.",
+          "compare.card1Title": "Premium first",
+          "compare.card1Body": "An emotional hero, strong product imagery and a simple recovery-led promise.",
+          "compare.card2Title": "Clear product facts",
+          "compare.card2Body": "Specs, battery, water resistance, app, sizing and box contents are visible before preorder.",
+          "compare.card3Title": "International ready",
+          "compare.card3Body": "Native FR/EN switching to sell in Switzerland, France and English-speaking markets without duplicating the site.",
+          "pricing.eyebrow": "Launch",
+          "pricing.title": "Founders edition",
+          "pricing.body": "A limited first run to validate the product, build the community and ship early units with direct team support.",
+          "pricing.badge": "Preorder",
+          "pricing.sub": "Indicative early-access price, sizing kit included.",
+          "pricing.item1": "Vitarinq titanium ring",
+          "pricing.item2": "USB-C magnetic charger",
+          "pricing.item3": "iOS/Android app at launch",
+          "pricing.item4": "No subscription for 12 months",
+          "pricing.cta": "Join the list",
+          "faq.eyebrow": "Questions",
+          "faq.title": "What to know.",
+          "faq.q1": "Is it a medical device?",
+          "faq.a1": "No. Vitarinq is designed for wellness and performance, not diagnosis.",
+          "faq.q2": "When can it ship?",
+          "faq.a2": "This page creates the preorder foundation. The final date depends on prototype work, testing and supply chain.",
+          "faq.q3": "Why a ring instead of a watch?",
+          "faq.a3": "A ring is more discreet, more comfortable at night and better positioned for some passive measurements."
+        }
+      };
+
+      const setLanguage = (lang) => {
+        const dictionary = translations[lang];
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const value = dictionary[node.dataset.i18n];
+          if (value) node.textContent = value;
+        });
+        document.querySelectorAll("[data-i18n-attr]").forEach((node) => {
+          node.dataset.i18nAttr.split(",").forEach((pair) => {
+            const [attr, key] = pair.split(":");
+            const value = dictionary[key];
+            if (attr && value) node.setAttribute(attr, value);
+          });
+        });
+        document.querySelectorAll("[data-lang]").forEach((button) => {
+          button.classList.toggle("active", button.dataset.lang === lang);
+        });
+        localStorage.setItem("vitarinq-language", lang);
+      };
+
+      document.querySelectorAll("[data-lang]").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.lang));
+      });
+
+      setLanguage(localStorage.getItem("vitarinq-language") || "fr");
+    </script>
+  </body>
+</html>
