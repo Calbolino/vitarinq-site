@@ -746,70 +746,159 @@ details p,
 .capability-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 24px;
+  gap: 14px;
+  margin-top: 28px;
 }
 
 .cap {
+  --accent: 215, 178, 109;
   position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-rows: auto 1fr;
   justify-items: center;
-  align-content: center;
-  gap: 10px;
-  min-height: 108px;
-  padding: 18px 12px;
-  border: 1px solid rgba(20, 18, 15, 0.06);
-  border-radius: var(--radius);
-  background: rgba(255, 250, 240, 0.85);
+  align-content: start;
+  gap: 18px;
+  min-height: 168px;
+  padding: 28px 18px 22px;
+  border: 1px solid rgba(20, 18, 15, 0.05);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 250, 240, 0.6) 100%);
   text-align: center;
-  transition: transform 0.3s var(--ease-out), border-color 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 12px 28px rgba(37, 33, 27, 0.04);
+  transition: transform 0.45s var(--ease-out), border-color 0.45s, box-shadow 0.45s;
+}
+
+.cap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(var(--accent), 0.18), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.cap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18%;
+  right: 18%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(var(--accent), 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
 }
 
 .cap:hover {
-  transform: translateY(-3px);
-  border-color: rgba(215, 178, 109, 0.32);
-  box-shadow: 0 14px 36px rgba(37, 33, 27, 0.08);
+  transform: translateY(-6px);
+  border-color: rgba(var(--accent), 0.32);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9) inset,
+    0 26px 60px rgba(var(--accent), 0.18),
+    0 8px 20px rgba(37, 33, 27, 0.05);
 }
+
+.cap:hover::before { opacity: 1; }
+.cap:hover::after { opacity: 1; }
 
 .cap-ico {
   display: grid;
   place-items: center;
-  width: 40px;
+  width: 56px;
   aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--graphite);
-  color: var(--white);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(var(--accent), 0.18) 0%, rgba(var(--accent), 0.08) 100%);
+  color: rgb(var(--accent));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 6px 16px rgba(var(--accent), 0.12);
+  transition: transform 0.5s var(--ease-spring), background 0.5s, box-shadow 0.5s;
+}
+
+.cap:hover .cap-ico {
+  transform: scale(1.08) translateY(-2px);
+  background:
+    linear-gradient(135deg, rgba(var(--accent), 0.28) 0%, rgba(var(--accent), 0.14) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 14px 28px rgba(var(--accent), 0.22);
 }
 
 .cap-label {
   color: var(--ink);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
   letter-spacing: -0.01em;
+  max-width: 14ch;
+}
+
+/* Category accents (R, G, B) */
+.cap.cat-sleep    { --accent: 125, 95, 237; }
+.cap.cat-activity { --accent: 108, 128, 110; }
+.cap.cat-stress   { --accent: 50, 184, 196; }
+.cap.cat-heart    { --accent: 219, 68, 63; }
+.cap.cat-oxygen   { --accent: 240, 100, 61; }
+.cap.cat-social   { --accent: 82, 120, 143; }
+.cap.cat-women    { --accent: 199, 110, 140; }
+.cap.cat-water    { --accent: 70, 132, 178; }
+.cap.cat-camera   { --accent: 185, 145, 80; }
+.cap.cat-eda      { --accent: 118, 98, 242; }
+.cap.cat-blood    { --accent: 220, 80, 60; }
+.cap.cat-pressure { --accent: 245, 145, 73; }
+.cap.cat-glucose  { --accent: 240, 100, 61; }
+
+/* Indicative badge */
+.cap.tier-indicative {
+  background:
+    linear-gradient(180deg, rgba(255, 252, 245, 0.96) 0%, rgba(248, 240, 226, 0.6) 100%);
+}
+
+.cap.tier-indicative .cap-ico::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px dashed rgba(var(--accent), 0.32);
+  pointer-events: none;
 }
 
 .cap.tier-indicative .cap-ico {
-  background: linear-gradient(135deg, var(--copper), #8a5236);
+  position: relative;
 }
 
-.cap.tier-indicative::after {
-  content: "i";
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 16px;
-  height: 16px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: rgba(185, 119, 85, 0.18);
-  color: var(--copper);
-  font-size: 0.66rem;
-  font-weight: 800;
-  font-style: italic;
+.cap.tier-indicative .indicative-pill,
+.cap.tier-indicative::before { z-index: -1; }
+
+.cap.tier-indicative {
+  padding-top: 36px;
 }
+
+.cap.tier-indicative > .cap-label::after {
+  content: "Indicatif";
+  display: block;
+  margin: 8px auto 0;
+  padding: 3px 10px;
+  width: max-content;
+  border-radius: 999px;
+  background: rgba(var(--accent), 0.1);
+  color: rgb(var(--accent));
+  font-size: 0.62rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+[lang="en"] .cap.tier-indicative > .cap-label::after { content: "Indicative"; }
 
 /* ─── Medical notice ─── */
 .medical-notice {
