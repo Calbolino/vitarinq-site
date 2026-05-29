@@ -2528,3 +2528,24 @@ details p {
   border-color: #c79a48;
   background: rgba(215, 178, 109, 0.2);
 }
+
+/* ─── ring-swatch SVG (real ring shape, 3 metal finishes) ─── */
+.ring-swatch {
+  width: 52px;
+  height: 52px;
+  display: block;
+  background: none;
+  box-shadow: none;
+}
+.ring-swatch::after { content: none; }
+.ring-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.32));
+  transition: transform 0.18s var(--ease-out);
+}
+.color-option:hover .ring-svg { transform: translateY(-1px) scale(1.03); }
+.color-option:has(input:checked) .ring-svg {
+  filter: drop-shadow(0 4px 10px rgba(215, 178, 109, 0.55));
+}
