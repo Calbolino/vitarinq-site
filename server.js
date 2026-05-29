@@ -2,8 +2,42 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const HOST = '0.0.0.0';
+
+// ─── Charge .env (parseur simple) ; les vraies variables d'env / Secrets Replit priment ───
+function loadEnv() {
+  const out = {};
+  try {
+    const p = path.join(__dirname, '.env');
+    if (fs.existsSync(p)) {
+      fs.readFileSync(p, 'utf8').split(/\r?\n/).forEach((line) => {
+        if (!line || /^\s*#/.test(line)) return;
+        const i = line.indexOf('=');
+        if (i === -1) return;
+        const k = line.slice(0, i).trim();
+        let v = line.slice(i + 1).trim();
+        if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) {
+          v = v.slice(1, -1);
+        }
+        if (k) out[k] = v;
+      });
+    }
+  } catch (e) {
+    /* .env absent ou illisible : on ignore */
+  }
+  return out;
+}
+
+const FILE_ENV = loadEnv();
+// process.env (Secrets Replit) prioritaire, sinon .env local
+const env = (key) =>
+  process.env[key] != null && process.env[key] !== '' ? process.env[key] : FILE_ENV[key] || '';
+
+// Jetons remplacés dans le HTML servi → valeur depuis .env / Secrets Replit
+const PLACEHOLDERS = {
+  '__WEB3FORMS_ACCESS_KEY__': env('WEB3FORMS_ACCESS_KEY'),
+};
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -52,6 +86,18 @@ const server = http.createServer((req, res) => {
       }
       const ext = path.extname(finalPath).toLowerCase();
       res.setHeader('Content-Type', MIME[ext] || 'application/octet-stream');
+
+      // Injection des secrets dans les réponses HTML
+      if (ext === '.html') {
+        let html = data.toString('utf8');
+        for (const token in PLACEHOLDERS) {
+          html = html.split(token).join(PLACEHOLDERS[token]);
+        }
+        res.writeHead(200);
+        res.end(html);
+        return;
+      }
+
       res.writeHead(200);
       res.end(data);
     });

@@ -59,7 +59,7 @@
           </p>
           <div class="hero-actions reveal reveal-delay-3" aria-label="Actions principales" data-i18n-attr="aria-label:hero.actionsAria">
             <a class="button primary" href="#pricing" data-i18n="hero.primary">Précommander</a>
-            <a class="button secondary" href="#health" data-i18n="hero.secondary">Voir les mesures</a>
+            <button type="button" class="button secondary js-size-guide" id="ringSizesLink" data-i18n="hero.secondary">Voir les mesures</button>
           </div>
           <div class="trust-strip reveal reveal-delay-4" aria-label="Points forts" data-i18n-attr="aria-label:hero.trustAria">
             <span data-i18n="hero.trust1">Jusqu'à 7 jours de batterie</span>
@@ -115,8 +115,8 @@
               <path d="M9 14.5c0 1.7 1.3 3 3 3"/>
             </svg>
           </span>
-          <strong>5<em>ATM</em></strong>
-          <span class="proof-label" data-i18n="proof.water">Usage quotidien</span>
+          <strong>50<em> m</em></strong>
+          <span class="proof-label" data-i18n="proof.water">Étanche · 5 ATM</span>
         </div>
       </section>
 
@@ -548,13 +548,47 @@
             <li data-i18n="pricing.item3">App iOS/Android</li>
             <li data-i18n="pricing.item4">Sans abonnement</li>
           </ul>
+          <button type="button" class="size-guide-trigger js-size-guide" data-i18n="pricing.sizeGuide">📏 Voir le guide des tailles</button>
           <form class="preorder-form" id="preorder-form" novalidate>
             <!-- Web3Forms : remplacer la valeur ci-dessous par votre clé d'accès (voir instructions). -->
-            <input type="hidden" name="access_key" value="c85e78d6-32ab-4f83-a5ed-a457981a8d78" />
+            <input type="hidden" name="access_key" value="__WEB3FORMS_ACCESS_KEY__" />
             <input type="hidden" name="subject" value="Nouvelle precommande Vitarinq" />
             <input type="hidden" name="from_name" value="Site Vitarinq" />
             <!-- Honeypot anti-spam : invisible pour les humains, piège les bots. -->
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="size-field">
+              <span class="size-field__label" data-i18n="pricing.sizeLabel">Taille</span>
+              <div class="size-chips" role="radiogroup" aria-label="Taille de bague">
+                <label class="size-chip"><input type="radio" name="size" value="6" /><span>6</span></label>
+                <label class="size-chip"><input type="radio" name="size" value="7" /><span>7</span></label>
+                <label class="size-chip"><input type="radio" name="size" value="8" /><span>8</span></label>
+                <label class="size-chip"><input type="radio" name="size" value="9" /><span>9</span></label>
+                <label class="size-chip"><input type="radio" name="size" value="10" /><span>10</span></label>
+                <label class="size-chip"><input type="radio" name="size" value="11" /><span>11</span></label>
+                <label class="size-chip"><input type="radio" name="size" value="12" /><span>12</span></label>
+                <label class="size-chip"><input type="radio" name="size" value="13" /><span>13</span></label>
+              </div>
+            </div>
+            <fieldset class="color-picker">
+              <legend class="color-picker__label" data-i18n="pricing.colorLabel">Couleur</legend>
+              <div class="color-options">
+                <label class="color-option">
+                  <input type="radio" name="color" value="Noir" checked />
+                  <span class="color-swatch color-swatch--noir" aria-hidden="true"></span>
+                  <span class="color-name" data-i18n="pricing.colorBlack">Noir</span>
+                </label>
+                <label class="color-option">
+                  <input type="radio" name="color" value="Or" />
+                  <span class="color-swatch color-swatch--or" aria-hidden="true"></span>
+                  <span class="color-name" data-i18n="pricing.colorGold">Or</span>
+                </label>
+                <label class="color-option">
+                  <input type="radio" name="color" value="Argent" />
+                  <span class="color-swatch color-swatch--argent" aria-hidden="true"></span>
+                  <span class="color-name" data-i18n="pricing.colorSilver">Argent</span>
+                </label>
+              </div>
+            </fieldset>
             <label class="sr-only" for="preorder-email" data-i18n="pricing.emailLabel">Adresse email</label>
             <div class="preorder-field">
               <input
@@ -600,6 +634,100 @@
       <a href="mailto:hello@vitarinq.com">hello@vitarinq.com</a>
       <span>vitarinq.com</span>
     </footer>
+
+    <!-- Guide des tailles de bague -->
+    <div class="size-modal" id="sizeGuide" role="dialog" aria-modal="true" aria-labelledby="sizeGuideTitle" hidden>
+      <div class="size-modal__overlay" data-size-close></div>
+      <div class="size-modal__card">
+        <button type="button" class="size-modal__close" data-size-close aria-label="Fermer" data-i18n-attr="aria-label:size.close">×</button>
+        <div class="size-modal__head">
+          <span class="size-modal__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8" />
+              <circle cx="12" cy="12" r="3.4" />
+            </svg>
+          </span>
+          <div>
+            <h3 class="size-modal__title" id="sizeGuideTitle" data-i18n="size.title">Guide des tailles</h3>
+            <p class="size-modal__sub" data-i18n="size.sub">Trouvez votre taille de bague Vitarinq</p>
+          </div>
+        </div>
+        <div class="size-modal__tip">
+          <strong data-i18n="size.tipLabel">Comment mesurer ?</strong>
+          <span data-i18n="size.tipBody"> Enroulez une bandelette de papier autour de la base du doigt, marquez le point de chevauchement puis mesurez sa longueur : c'est votre circonférence. Mesurez en fin de journée, doigts à température normale.</span>
+        </div>
+        <div class="size-modal__measure">
+          <svg class="measure-illu" viewBox="0 0 240 232" role="img" aria-labelledby="measureIlluTitle">
+            <title id="measureIlluTitle">Mesurer à l'index de la main gauche</title>
+            <defs>
+              <radialGradient id="vrGlow" cx="52%" cy="58%" r="58%">
+                <stop offset="0" stop-color="#d7b26d" stop-opacity="0.20" />
+                <stop offset="1" stop-color="#d7b26d" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="vrHand" x1="0" y1="0" x2="0.25" y2="1">
+                <stop offset="0" stop-color="#3d362c" />
+                <stop offset="1" stop-color="#211c16" />
+              </linearGradient>
+              <linearGradient id="vrIndex" x1="0" y1="0" x2="0.3" y2="1">
+                <stop offset="0" stop-color="#574a35" />
+                <stop offset="1" stop-color="#2f2718" />
+              </linearGradient>
+              <linearGradient id="vrIndexHi" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ffffff" stop-opacity="0.12" />
+                <stop offset="0.55" stop-color="#ffffff" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="122" cy="130" rx="98" ry="96" fill="url(#vrGlow)" />
+            <!-- LEFT hand, back view: pinky · ring · middle (left), index (right), thumb far right (dimmed) -->
+            <g fill="url(#vrHand)" stroke="#6a5f51" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="0.62">
+              <path d="M55 170 L56 114 C57 98 72 98 73 114 L74 170 Z" />
+              <path d="M79 172 L80 90 C81 73 97 73 98 90 L99 172 Z" />
+              <path d="M103 172 L104 74 C105 57 123 57 124 74 L125 172 Z" />
+              <path d="M151 152 C166 140 186 125 199 123 C209 122 212 133 204 141 C191 154 177 171 167 183 C161 190 151 187 150 177 Z" />
+              <path d="M50 152 C73 142 135 142 158 152 C170 180 162 207 121 212 C107 215 95 215 81 212 C44 207 38 180 50 152 Z" />
+            </g>
+            <!-- INDEX finger, highlighted -->
+            <path d="M126 170 L127 90 C128 72 150 72 151 90 L152 170 Z" fill="url(#vrIndex)" stroke="#d7b26d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+            <path d="M126 170 L127 90 C128 72 150 72 151 90 L152 170 Z" fill="url(#vrIndexHi)" />
+            <!-- knuckle crease hint -->
+            <path d="M131 140 q8 4 16 0" fill="none" stroke="#6b5526" stroke-width="1.2" opacity="0.45" />
+            <!-- ring worn on the index (brighter) -->
+            <ellipse cx="139" cy="121" rx="19" ry="7.2" fill="none" stroke="#d7b26d" stroke-width="5.5" />
+            <ellipse cx="139" cy="121" rx="19" ry="7.2" fill="none" stroke="#f7e3a8" stroke-width="1.5" opacity="0.75" />
+            <!-- caliper: Ø max measured at the knuckle -->
+            <line x1="120" y1="121" x2="120" y2="99" stroke="#e7c889" stroke-width="1" stroke-dasharray="3 3" opacity="0.75" />
+            <line x1="158" y1="121" x2="158" y2="99" stroke="#e7c889" stroke-width="1" stroke-dasharray="3 3" opacity="0.75" />
+            <line x1="120" y1="101" x2="158" y2="101" stroke="#e7c889" stroke-width="2" />
+            <path d="M120 101 l8 -4 v8 z" fill="#e7c889" />
+            <path d="M158 101 l-8 -4 v8 z" fill="#e7c889" />
+            <text x="139" y="93" text-anchor="middle" fill="#f4dca0" font-size="12.5" font-weight="700" font-family="Inter, sans-serif">Ø max</text>
+          </svg>
+          <p class="size-modal__measure-cap" data-i18n="size.measureCap">Important : mesurez au niveau de l'articulation, la partie la plus large. C'est le diamètre maximum que la bague doit pouvoir franchir.</p>
+        </div>
+        <div class="size-table-wrap">
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th data-i18n="size.colSize">Taille</th>
+                <th data-i18n="size.colDiameter">Ø intérieur</th>
+                <th data-i18n="size.colCirc">Circonférence ≈</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="size-pill">6</span></td><td>16,60 mm</td><td>52,1 mm</td></tr>
+              <tr><td><span class="size-pill">7</span></td><td>17,50 mm</td><td>55,0 mm</td></tr>
+              <tr><td><span class="size-pill">8</span></td><td>18,30 mm</td><td>57,5 mm</td></tr>
+              <tr><td><span class="size-pill">9</span></td><td>19,05 mm</td><td>59,8 mm</td></tr>
+              <tr><td><span class="size-pill">10</span></td><td>20,00 mm</td><td>62,8 mm</td></tr>
+              <tr><td><span class="size-pill">11</span></td><td>20,80 mm</td><td>65,3 mm</td></tr>
+              <tr><td><span class="size-pill">12</span></td><td>21,60 mm</td><td>67,9 mm</td></tr>
+              <tr><td><span class="size-pill">13</span></td><td>22,45 mm</td><td>70,5 mm</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="size-modal__foot" data-i18n="size.foot">💡 Entre deux tailles ? Choisissez la taille supérieure.</p>
+      </div>
+    </div>
 
     <script>
       // ─── Scroll progress bar ───
@@ -702,7 +830,7 @@
           "proof.aria": "Indicateurs produit",
           "proof.passive": "mesure passive",
           "proof.light": "profil ultra léger",
-          "proof.water": "usage quotidien",
+          "proof.water": "Étanche · 5 ATM",
           "proof.privacy": "données chiffrées",
           "proof.material": "matériau",
           "proof.materialValue": "Titane",
@@ -806,6 +934,24 @@
           "pricing.success": "Merci ! Vous êtes sur la liste. On vous écrit très vite.",
           "pricing.error": "Oups, l'envoi a échoué. Réessayez ou écrivez à hello@vitarinq.com.",
           "pricing.invalid": "Entrez une adresse email valide.",
+          "pricing.sizeGuide": "📏 Voir le guide des tailles",
+          "size.title": "Guide des tailles",
+          "size.sub": "Trouvez votre taille de bague Vitarinq",
+          "size.tipLabel": "Comment mesurer ?",
+          "size.tipBody": " Portez de préférence la bague à l'index (main gauche ou droite). Enroulez une bandelette de papier autour du doigt et mesurez sa circonférence, en fin de journée.",
+          "size.measureCap": "Le mieux : portez la bague à l'index (main droite ou gauche). Mesurez au niveau de l'articulation — la partie la plus large : c'est le diamètre maximum que la bague doit pouvoir franchir.",
+          "size.colSize": "Taille",
+          "size.colDiameter": "Ø intérieur",
+          "size.colCirc": "Circonférence ≈",
+          "size.foot": "💡 Entre deux tailles ? Choisissez la taille supérieure.",
+          "size.close": "Fermer",
+          "pricing.colorLabel": "Couleur",
+          "pricing.colorBlack": "Noir",
+          "pricing.colorGold": "Or",
+          "pricing.colorSilver": "Argent",
+          "pricing.sizeLabel": "Taille",
+          "pricing.sizePlaceholder": "Choisir votre taille…",
+          "pricing.sizeRequired": "Choisissez votre taille de bague.",
           "faq.eyebrow": "Questions",
           "faq.title": "Ce qu'il faut savoir.",
           "faq.q1": "Est-ce un dispositif médical?",
@@ -845,7 +991,7 @@
           "proof.aria": "Product indicators",
           "proof.passive": "passive tracking",
           "proof.light": "ultra-light profile",
-          "proof.water": "daily wear",
+          "proof.water": "Water-resistant · 5 ATM",
           "proof.privacy": "encrypted data",
           "proof.material": "material",
           "proof.materialValue": "Titanium",
@@ -949,6 +1095,24 @@
           "pricing.success": "Thanks! You're on the list. We'll be in touch very soon.",
           "pricing.error": "Oops, something went wrong. Try again or email hello@vitarinq.com.",
           "pricing.invalid": "Please enter a valid email address.",
+          "pricing.sizeGuide": "📏 View size guide",
+          "size.title": "Size guide",
+          "size.sub": "Find your Vitarinq ring size",
+          "size.tipLabel": "How to measure?",
+          "size.tipBody": " Wear the ring preferably on your index finger (left or right hand). Wrap a strip of paper around the finger and measure its circumference, ideally at the end of the day.",
+          "size.measureCap": "Best worn on your index finger (right or left hand). Measure at the knuckle — the widest part: that's the maximum diameter the ring must be able to slide over.",
+          "size.colSize": "Size",
+          "size.colDiameter": "Inner Ø",
+          "size.colCirc": "Circumference ≈",
+          "size.foot": "💡 Between two sizes? Go for the larger one.",
+          "size.close": "Close",
+          "pricing.colorLabel": "Color",
+          "pricing.colorBlack": "Black",
+          "pricing.colorGold": "Gold",
+          "pricing.colorSilver": "Silver",
+          "pricing.sizeLabel": "Size",
+          "pricing.sizePlaceholder": "Choose your size…",
+          "pricing.sizeRequired": "Please choose your ring size.",
           "faq.eyebrow": "Questions",
           "faq.title": "What to know.",
           "faq.q1": "Is it a medical device?",
@@ -1006,6 +1170,14 @@
         preorderForm.addEventListener("submit", async (event) => {
           event.preventDefault();
 
+          const sizeChosen = preorderForm.querySelector('input[name="size"]:checked');
+          if (!sizeChosen) {
+            setStatus("pricing.sizeRequired", "is-error");
+            var firstChip = preorderForm.querySelector('input[name="size"]');
+            if (firstChip) firstChip.focus();
+            return;
+          }
+
           if (!emailInput.value.trim() || !emailInput.checkValidity()) {
             setStatus("pricing.invalid", "is-error");
             emailInput.focus();
@@ -1045,6 +1217,68 @@
           }
         });
       }
+    </script>
+
+    <script>
+      // ─── Ring size guide modal ───
+      (function () {
+        var modal = document.getElementById('sizeGuide');
+        if (!modal) return;
+        var triggers = document.querySelectorAll('.js-size-guide');
+        var lastFocus = null;
+
+        function openModal(e) {
+          if (e) e.preventDefault();
+          lastFocus = document.activeElement;
+          modal.hidden = false;
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          var closeBtn = modal.querySelector('.size-modal__close');
+          if (closeBtn) closeBtn.focus();
+        }
+        function closeModal() {
+          modal.classList.remove('open');
+          modal.hidden = true;
+          document.body.style.overflow = '';
+          if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+        }
+
+        triggers.forEach(function (t) { t.addEventListener('click', openModal); });
+        modal.querySelectorAll('[data-size-close]').forEach(function (el) {
+          el.addEventListener('click', closeModal);
+        });
+        document.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Escape' && modal.classList.contains('open')) closeModal();
+        });
+      })();
+    </script>
+
+    <script>
+      // ─── Mobile: tap the brand (ring logo) to open the menu — hamburger removed ───
+      (function () {
+        var brand = document.querySelector('.brand');
+        var nav = document.getElementById('nav-links');
+        var toggle = document.getElementById('menu-toggle');
+        if (!brand || !nav) return;
+
+        function isMobileNav() {
+          // Mobile layout = the nav is collapsed by CSS (display:none), or open as the overlay.
+          return getComputedStyle(nav).display === 'none' || nav.classList.contains('mobile-open');
+        }
+
+        // Capture phase + stopPropagation so the smooth-scroll handler on the logo does not also fire.
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest('.brand')) return;
+          if (!isMobileNav()) return;
+          e.preventDefault();
+          e.stopPropagation();
+          var open = nav.classList.toggle('mobile-open');
+          if (toggle) {
+            toggle.classList.toggle('open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          }
+        }, true);
+      })();
     </script>
   </body>
 </html>
