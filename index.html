@@ -545,12 +545,33 @@
           <ul>
             <li data-i18n="pricing.item1">Bague Vitarinq en titane</li>
             <li data-i18n="pricing.item2">Chargeur magnétique USB-C</li>
-            <li data-i18n="pricing.item3">App iOS/Android au lancement</li>
+            <li data-i18n="pricing.item3">App iOS/Android</li>
             <li data-i18n="pricing.item4">Sans abonnement</li>
           </ul>
-          <a class="button primary wide is-disabled" aria-disabled="true" tabindex="-1" data-i18n="pricing.cta">
-            Rejoindre la liste
-          </a>
+          <form class="preorder-form" id="preorder-form" novalidate>
+            <!-- Web3Forms : remplacer la valeur ci-dessous par votre clé d'accès (voir instructions). -->
+            <input type="hidden" name="access_key" value="c85e78d6-32ab-4f83-a5ed-a457981a8d78" />
+            <input type="hidden" name="subject" value="Nouvelle precommande Vitarinq" />
+            <input type="hidden" name="from_name" value="Site Vitarinq" />
+            <!-- Honeypot anti-spam : invisible pour les humains, piège les bots. -->
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <label class="sr-only" for="preorder-email" data-i18n="pricing.emailLabel">Adresse email</label>
+            <div class="preorder-field">
+              <input
+                type="email"
+                id="preorder-email"
+                name="email"
+                required
+                autocomplete="email"
+                placeholder="vous@exemple.com"
+                data-i18n-attr="placeholder:pricing.emailPlaceholder"
+              />
+              <button type="submit" class="button primary wide" data-i18n="pricing.cta">
+                Rejoindre la liste
+              </button>
+            </div>
+            <p class="preorder-status" id="preorder-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
 
@@ -775,9 +796,15 @@
           "pricing.sub": "Prix indicatif early access.",
           "pricing.item1": "Bague Vitarinq en titane",
           "pricing.item2": "Chargeur magnétique USB-C",
-          "pricing.item3": "App iOS/Android au lancement",
+          "pricing.item3": "App iOS/Android",
           "pricing.item4": "Sans abonnement",
           "pricing.cta": "Rejoindre la liste",
+          "pricing.emailLabel": "Adresse email",
+          "pricing.emailPlaceholder": "vous@exemple.com",
+          "pricing.sending": "Envoi…",
+          "pricing.success": "Merci ! Vous êtes sur la liste. On vous écrit très vite.",
+          "pricing.error": "Oups, l'envoi a échoué. Réessayez ou écrivez à hello@vitarinq.com.",
+          "pricing.invalid": "Entrez une adresse email valide.",
           "faq.eyebrow": "Questions",
           "faq.title": "Ce qu'il faut savoir.",
           "faq.q1": "Est-ce un dispositif médical?",
@@ -912,9 +939,15 @@
           "pricing.sub": "Indicative early-access price.",
           "pricing.item1": "Vitarinq titanium ring",
           "pricing.item2": "USB-C magnetic charger",
-          "pricing.item3": "iOS/Android app at launch",
+          "pricing.item3": "iOS/Android app",
           "pricing.item4": "No subscription",
           "pricing.cta": "Join the list",
+          "pricing.emailLabel": "Email address",
+          "pricing.emailPlaceholder": "you@example.com",
+          "pricing.sending": "Sending…",
+          "pricing.success": "Thanks! You're on the list. We'll be in touch very soon.",
+          "pricing.error": "Oops, something went wrong. Try again or email hello@vitarinq.com.",
+          "pricing.invalid": "Please enter a valid email address.",
           "faq.eyebrow": "Questions",
           "faq.title": "What to know.",
           "faq.q1": "Is it a medical device?",
@@ -951,6 +984,66 @@
       });
 
       setLanguage(localStorage.getItem("vitarinq-language") || "fr");
+
+      // ─── Preorder form (Web3Forms) ───
+      const preorderForm = document.getElementById("preorder-form");
+      if (preorderForm) {
+        const statusEl = document.getElementById("preorder-status");
+        const emailInput = document.getElementById("preorder-email");
+        const submitBtn = preorderForm.querySelector('button[type="submit"]');
+        const accessKey = preorderForm.querySelector('input[name="access_key"]');
+
+        const tr = (key) => {
+          const dict = translations[document.documentElement.lang] || translations.fr;
+          return dict[key] || key;
+        };
+        const setStatus = (key, state) => {
+          statusEl.textContent = key ? tr(key) : "";
+          statusEl.className = "preorder-status" + (state ? " " + state : "");
+        };
+
+        preorderForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          if (!emailInput.value.trim() || !emailInput.checkValidity()) {
+            setStatus("pricing.invalid", "is-error");
+            emailInput.focus();
+            return;
+          }
+          if (!accessKey.value || accessKey.value === "WEB3FORMS_ACCESS_KEY") {
+            setStatus("pricing.error", "is-error");
+            console.warn(
+              "Vitarinq : clé Web3Forms non configurée dans index.html (champ access_key)."
+            );
+            return;
+          }
+
+          const originalLabel = submitBtn.textContent;
+          submitBtn.disabled = true;
+          submitBtn.textContent = tr("pricing.sending");
+          setStatus("", "");
+
+          try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: { Accept: "application/json" },
+              body: new FormData(preorderForm),
+            });
+            const data = await response.json();
+            if (data.success) {
+              preorderForm.reset();
+              setStatus("pricing.success", "is-success");
+            } else {
+              throw new Error(data.message || "submit failed");
+            }
+          } catch (err) {
+            setStatus("pricing.error", "is-error");
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalLabel;
+          }
+        });
+      }
     </script>
   </body>
 </html>
