@@ -28,7 +28,6 @@
       <nav class="nav-links" id="nav-links" aria-label="Sections">
         <a href="#experience" data-i18n="nav.experience">Expérience</a>
         <a href="#health" data-i18n="nav.health">Santé</a>
-        <a href="#compare" data-i18n="nav.compare">Comparer</a>
         <a href="#pricing" data-i18n="nav.preorder">Précommande</a>
       </nav>
       <div class="header-actions">
@@ -65,7 +64,7 @@
           <div class="trust-strip reveal reveal-delay-4" aria-label="Points forts" data-i18n-attr="aria-label:hero.trustAria">
             <span data-i18n="hero.trust1">Jusqu'à 7 jours de batterie</span>
             <span data-i18n="hero.trust2">Dock portable avec batterie intégrée</span>
-            <span data-i18n="hero.trust3">Sans abonnement au lancement</span>
+            <span data-i18n="hero.trust3">Application premium sans abonnement</span>
           </div>
         </div>
         <div class="hero-specs" aria-label="Résumé produit" data-i18n-attr="aria-label:hero.specsAria">
@@ -93,10 +92,23 @@
               <line x1="6" y1="19" x2="13" y2="12"/>
             </svg>
           </span>
-          <strong>3<em> g</em></strong>
+          <strong>2.5<em> g</em></strong>
           <span class="proof-label" data-i18n="proof.light">Profil ultra léger</span>
         </div>
         <div class="reveal reveal-delay-2">
+          <span class="proof-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 3h12l3 6-9 12L3 9z"/>
+              <path d="M3 9h18"/>
+              <path d="M9 3 7 9"/>
+              <path d="M15 3 17 9"/>
+              <path d="M7 9 12 21 17 9"/>
+            </svg>
+          </span>
+          <strong data-i18n="proof.materialValue">Titane</strong>
+          <span class="proof-label" data-i18n="proof.material">Matériau</span>
+        </div>
+        <div class="reveal reveal-delay-3">
           <span class="proof-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 3c3.5 4.6 6 8.3 6 11.5a6 6 0 0 1-12 0C6 11.3 8.5 7.6 12 3z"/>
@@ -105,16 +117,6 @@
           </span>
           <strong>5<em>ATM</em></strong>
           <span class="proof-label" data-i18n="proof.water">Usage quotidien</span>
-        </div>
-        <div class="reveal reveal-delay-3">
-          <span class="proof-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>
-              <path d="M9 12l2.2 2.2L15 10.5"/>
-            </svg>
-          </span>
-          <strong>RGPD</strong>
-          <span class="proof-label" data-i18n="proof.privacy">Données chiffrées</span>
         </div>
       </section>
 
@@ -282,6 +284,17 @@
             L'interface Vitarinq met les indicateurs clés en cartes rapides: sommeil, fréquence cardiaque, HRV,
             SpO2, stress, activité et micro-examen. Les données sensibles restent lisibles sans transformer
             l'app en tableau clinique.
+          </p>
+          <p class="sync-note">
+            <span class="sync-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 0 1 15-6.7L21 8"/>
+                <path d="M21 3v5h-5"/>
+                <path d="M21 12a9 9 0 0 1-15 6.7L3 16"/>
+                <path d="M3 21v-5h5"/>
+              </svg>
+            </span>
+            <span data-i18n="app.sync">Synchronisation avec Apple Santé et Google Health Connect.</span>
           </p>
         </div>
         <div class="phone-stage" aria-label="Aperçu de l'application Vitarinq" data-i18n-attr="aria-label:app.aria">
@@ -506,37 +519,12 @@
             <p data-i18n="design.card2Body">Un dock rond noir, stable et compact, pensé pour poser la bague sans effort chaque semaine.</p>
           </article>
           <article class="reveal reveal-delay-2">
-            <h3 data-i18n="design.card3Title">Fit kit inclus</h3>
-            <p data-i18n="design.card3Body">Chaque précommande reçoit un kit de tailles avant l'expédition finale.</p>
+            <h3 data-i18n="design.card3Title">7 jours d'autonomie</h3>
+            <p data-i18n="design.card3Body">Jusqu'à 7 jours sur une seule charge: portez la bague en continu, sans souci de batterie.</p>
           </article>
           <article class="reveal reveal-delay-3">
             <h3 data-i18n="design.card4Title">App claire</h3>
             <p data-i18n="design.card4Body">Insights quotidiens, historique, exports et mode privé pour garder la main sur vos données.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section compare" id="compare" aria-labelledby="compare-title">
-        <div class="section-heading reveal">
-          <p class="eyebrow" data-i18n="compare.eyebrow">Positionnement</p>
-          <h2 id="compare-title" data-i18n="compare.title">Une bague santé premium, claire, élégante et vraiment discrète.</h2>
-          <p data-i18n="compare.body">
-            La page met l'accent sur ce qui rassure avant l'achat: bénéfices santé, mesures concrètes,
-            autonomie, protection des données, sizing et prix early access.
-          </p>
-        </div>
-        <div class="compare-grid">
-          <article class="reveal">
-            <h3 data-i18n="compare.card1Title">Premium d'abord</h3>
-            <p data-i18n="compare.card1Body">Un hero émotionnel, une photographie produit forte et une promesse simple autour de la récupération.</p>
-          </article>
-          <article class="reveal reveal-delay-1">
-            <h3 data-i18n="compare.card2Title">Fiches claires</h3>
-            <p data-i18n="compare.card2Body">Specs, batterie, étanchéité, app, sizing et contenu de la boîte visibles avant la précommande.</p>
-          </article>
-          <article class="reveal reveal-delay-2">
-            <h3 data-i18n="compare.card3Title">International ready</h3>
-            <p data-i18n="compare.card3Body">Bascule FR/EN native pour vendre en Suisse, France et marchés anglophones sans dupliquer le site.</p>
           </article>
         </div>
       </section>
@@ -553,14 +541,14 @@
         <div class="price-card reveal-scale">
           <span class="badge" data-i18n="pricing.badge">Précommande</span>
           <div class="price">CHF 249</div>
-          <p data-i18n="pricing.sub">Prix indicatif early access, fit kit inclus.</p>
+          <p data-i18n="pricing.sub">Prix indicatif early access.</p>
           <ul>
             <li data-i18n="pricing.item1">Bague Vitarinq en titane</li>
             <li data-i18n="pricing.item2">Chargeur magnétique USB-C</li>
             <li data-i18n="pricing.item3">App iOS/Android au lancement</li>
-            <li data-i18n="pricing.item4">Sans abonnement pendant 12 mois</li>
+            <li data-i18n="pricing.item4">Sans abonnement</li>
           </ul>
-          <a class="button primary wide" href="mailto:hello@vitarinq.com?subject=Precommande%20Vitarinq" data-i18n="pricing.cta">
+          <a class="button primary wide is-disabled" aria-disabled="true" tabindex="-1" data-i18n="pricing.cta">
             Rejoindre la liste
           </a>
         </div>
@@ -577,7 +565,7 @@
         </details>
         <details class="reveal reveal-delay-1">
           <summary data-i18n="faq.q2">Quand peut-on livrer?</summary>
-          <p data-i18n="faq.a2">Le site pose une base de précommande. La date finale dépendra du prototype, des tests et de la supply chain.</p>
+          <p data-i18n="faq.a2">La demande est très forte et les premières séries partent vite. Les livraisons se font selon le stock disponible, dans l'ordre des précommandes. Réservez tôt pour ne pas manquer le prochain lot.</p>
         </details>
         <details class="reveal reveal-delay-2">
           <summary data-i18n="faq.q3">Pourquoi une bague plutôt qu'une montre?</summary>
@@ -683,7 +671,7 @@
           "hero.trustAria": "Points forts",
           "hero.trust1": "Jusqu'à 7 jours de batterie",
           "hero.trust2": "Dock portable avec batterie intégrée",
-          "hero.trust3": "Sans abonnement au lancement",
+          "hero.trust3": "Application premium sans abonnement",
           "hero.imageAlt": "Bague connectée noire Vitarinq avec dock de charge ouvert",
           "hero.caption": "Bague noire polie, capteurs internes et dock de charge circulaire.",
           "hero.specsAria": "Résumé produit",
@@ -695,6 +683,8 @@
           "proof.light": "profil ultra léger",
           "proof.water": "usage quotidien",
           "proof.privacy": "données chiffrées",
+          "proof.material": "matériau",
+          "proof.materialValue": "Titane",
           "experience.eyebrow": "Expérience",
           "experience.title": "Un bijou qui travaille en silence.",
           "experience.body": "L'app transforme les signaux bruts en décisions simples: dormir plus tôt, réduire l'intensité, reprendre l'entraînement ou comprendre une semaine difficile.",
@@ -737,6 +727,7 @@
           "app.eyebrow": "Application",
           "app.title": "Une lecture claire, inspirée de vos vrais écrans santé.",
           "app.body": "L'interface Vitarinq met les indicateurs clés en cartes rapides: sommeil, fréquence cardiaque, HRV, SpO2, stress, activité et micro-examen. Les données sensibles restent lisibles sans transformer l'app en tableau clinique.",
+          "app.sync": "Synchronisation avec Apple Santé et Google Health Connect.",
           "app.aria": "Aperçu de l'application Vitarinq",
           "app.shareAria": "Partager",
           "app.phoneTitle": "Santé",
@@ -765,8 +756,8 @@
           "design.card1Body": "Finition graphite, argent ou champagne avec intérieur hypoallergénique poli miroir.",
           "design.card2Title": "Charge compacte",
           "design.card2Body": "Un dock rond noir, stable et compact, pensé pour poser la bague sans effort chaque semaine.",
-          "design.card3Title": "Fit kit inclus",
-          "design.card3Body": "Chaque précommande reçoit un kit de tailles avant l'expédition finale.",
+          "design.card3Title": "7 jours d'autonomie",
+          "design.card3Body": "Jusqu'à 7 jours sur une seule charge: portez la bague en continu, sans souci de batterie.",
           "design.card4Title": "App claire",
           "design.card4Body": "Insights quotidiens, historique, exports et mode privé pour garder la main sur vos données.",
           "compare.eyebrow": "Positionnement",
@@ -782,18 +773,18 @@
           "pricing.title": "Founders edition",
           "pricing.body": "Une première série limitée pour valider le produit, construire la communauté et livrer les premiers exemplaires avec un support direct de l'équipe.",
           "pricing.badge": "Précommande",
-          "pricing.sub": "Prix indicatif early access, fit kit inclus.",
+          "pricing.sub": "Prix indicatif early access.",
           "pricing.item1": "Bague Vitarinq en titane",
           "pricing.item2": "Chargeur magnétique USB-C",
           "pricing.item3": "App iOS/Android au lancement",
-          "pricing.item4": "Sans abonnement pendant 12 mois",
+          "pricing.item4": "Sans abonnement",
           "pricing.cta": "Rejoindre la liste",
           "faq.eyebrow": "Questions",
           "faq.title": "Ce qu'il faut savoir.",
           "faq.q1": "Est-ce un dispositif médical?",
           "faq.a1": "Non. Vitarinq est pensé comme un produit bien-être et performance, pas comme un outil de diagnostic.",
           "faq.q2": "Quand peut-on livrer?",
-          "faq.a2": "Le site pose une base de précommande. La date finale dépendra du prototype, des tests et de la supply chain.",
+          "faq.a2": "Les premières livraisons se feront par ordre de précommande, selon le stock disponible. Plus tôt vous réservez, plus tôt vous recevez.",
           "faq.q3": "Pourquoi une bague plutôt qu'une montre?",
           "faq.a3": "La bague est plus discrète, plus confortable la nuit et mieux placée pour certaines mesures passives."
         },
@@ -817,7 +808,7 @@
           "hero.trustAria": "Product highlights",
           "hero.trust1": "Up to 7 days battery",
           "hero.trust2": "Portable dock with built-in battery",
-          "hero.trust3": "No subscription at launch",
+          "hero.trust3": "Premium app, no subscription",
           "hero.imageAlt": "Black Vitarinq smart ring with open charging dock",
           "hero.caption": "Polished black ring, internal sensors and circular charging dock.",
           "hero.specsAria": "Product summary",
@@ -829,6 +820,8 @@
           "proof.light": "ultra-light profile",
           "proof.water": "daily wear",
           "proof.privacy": "encrypted data",
+          "proof.material": "material",
+          "proof.materialValue": "Titanium",
           "experience.eyebrow": "Experience",
           "experience.title": "Jewelry that works quietly.",
           "experience.body": "The app turns raw signals into simple decisions: sleep earlier, reduce intensity, resume training or understand a difficult week.",
@@ -871,6 +864,7 @@
           "app.eyebrow": "Application",
           "app.title": "A clear health view inspired by real app screens.",
           "app.body": "The Vitarinq interface turns key indicators into fast cards: sleep, heart rate, HRV, SpO2, stress, activity and quick checkups. Sensitive data stays readable without making the app feel clinical.",
+          "app.sync": "Syncs with Apple Health and Google Health Connect.",
           "app.aria": "Vitarinq app preview",
           "app.shareAria": "Share",
           "app.phoneTitle": "Health",
@@ -899,8 +893,8 @@
           "design.card1Body": "Graphite, silver or champagne finish with a mirror-polished hypoallergenic inner surface.",
           "design.card2Title": "Compact charging",
           "design.card2Body": "A stable round black dock designed to make weekly charging effortless.",
-          "design.card3Title": "Sizing kit included",
-          "design.card3Body": "Every preorder receives a sizing kit before final shipment.",
+          "design.card3Title": "7-day battery life",
+          "design.card3Body": "Up to 7 days on a single charge: wear the ring non-stop, with zero battery worries.",
           "design.card4Title": "Clear app",
           "design.card4Body": "Daily insights, history, exports and private mode keep you in control of your data.",
           "compare.eyebrow": "Positioning",
@@ -916,18 +910,18 @@
           "pricing.title": "Founders edition",
           "pricing.body": "A limited first run to validate the product, build the community and ship early units with direct team support.",
           "pricing.badge": "Preorder",
-          "pricing.sub": "Indicative early-access price, sizing kit included.",
+          "pricing.sub": "Indicative early-access price.",
           "pricing.item1": "Vitarinq titanium ring",
           "pricing.item2": "USB-C magnetic charger",
           "pricing.item3": "iOS/Android app at launch",
-          "pricing.item4": "No subscription for 12 months",
+          "pricing.item4": "No subscription",
           "pricing.cta": "Join the list",
           "faq.eyebrow": "Questions",
           "faq.title": "What to know.",
           "faq.q1": "Is it a medical device?",
           "faq.a1": "No. Vitarinq is designed for wellness and performance, not diagnosis.",
           "faq.q2": "When can it ship?",
-          "faq.a2": "This page creates the preorder foundation. The final date depends on prototype work, testing and supply chain.",
+          "faq.a2": "First deliveries follow preorder order, based on available stock. The earlier you reserve, the earlier you receive.",
           "faq.q3": "Why a ring instead of a watch?",
           "faq.a3": "A ring is more discreet, more comfortable at night and better positioned for some passive measurements."
         }

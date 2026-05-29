@@ -436,6 +436,15 @@ h1 .gradient-text {
 
 .button.wide { width: 100%; }
 
+.button.is-disabled {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.5;
+  box-shadow: 0 0 0 1px rgba(255, 250, 240, 0.12);
+}
+
+.button.is-disabled::after { display: none; }
+
 .trust-strip {
   flex-wrap: wrap;
   gap: 10px;
@@ -1078,6 +1087,33 @@ details p,
 }
 
 .app-preview .section-heading { max-width: 940px; }
+
+.sync-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 9px 18px 9px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(178, 140, 70, 0.38);
+  background: linear-gradient(135deg, rgba(215, 178, 109, 0.22), rgba(215, 178, 109, 0.08));
+  color: rgba(28, 22, 11, 0.82);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+}
+
+.sync-ico {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #d7b26d, #c69a4f);
+  border: 1px solid rgba(150, 115, 55, 0.5);
+  color: #2a2008;
+}
 
 .phone-stage {
   display: grid;
