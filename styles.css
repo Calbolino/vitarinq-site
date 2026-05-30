@@ -2643,3 +2643,12 @@ details p {
 .journey-grid article:hover .journey-icon { transform: translateY(-2px) rotate(-3deg); border-color: rgba(215,178,109,0.45); }
 .journey-grid h3 { font-size: 1.22rem; margin: 0 0 10px; letter-spacing: -0.01em; }
 .journey-grid p { position: relative; z-index: 1; }
+
+/* ─── ring-photo: zoom onto the polished band for a smooth, premium look ─── */
+.ring-swatch { overflow: hidden; border-radius: 12px; }
+.ring-photo {
+  object-fit: cover;
+  transform: scale(1.7);
+  transform-origin: 70% 56%;
+  background: #f4f4f2;
+}
