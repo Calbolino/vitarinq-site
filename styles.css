@@ -2644,11 +2644,10 @@ details p {
 .journey-grid h3 { font-size: 1.22rem; margin: 0 0 10px; letter-spacing: -0.01em; }
 .journey-grid p { position: relative; z-index: 1; }
 
-/* ─── ring-photo: zoom onto the polished band for a smooth, premium look ─── */
+/* ─── ring-photo: full ring on a clean white tile ─── */
 .ring-swatch { overflow: hidden; border-radius: 12px; }
 .ring-photo {
-  object-fit: cover;
-  transform: scale(1.7);
-  transform-origin: 70% 56%;
-  background: #f4f4f2;
+  object-fit: contain;
+  transform: none;
+  background: #ffffff;
 }
