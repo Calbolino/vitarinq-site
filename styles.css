@@ -2558,9 +2558,9 @@ details p {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 /* when a photo successfully loads, hide the drawn SVG underneath */
 .ring-swatch:has(.ring-photo) .ring-svg { opacity: 0; }
@@ -2644,10 +2644,13 @@ details p {
 .journey-grid h3 { font-size: 1.22rem; margin: 0 0 10px; letter-spacing: -0.01em; }
 .journey-grid p { position: relative; z-index: 1; }
 
-/* ─── ring-photo: full ring on a clean white tile ─── */
-.ring-swatch { overflow: hidden; border-radius: 12px; }
+/* ─── ring-photo: transparent cutout, blends into the cream card ─── */
+.ring-swatch { overflow: visible; border-radius: 0; }
 .ring-photo {
   object-fit: contain;
   transform: none;
-  background: #ffffff;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.22));
 }
