@@ -2549,3 +2549,18 @@ details p {
 .color-option:has(input:checked) .ring-svg {
   filter: drop-shadow(0 4px 10px rgba(215, 178, 109, 0.55));
 }
+
+/* ─── ring-photo overlay: real product photo, falls back to SVG if file missing ─── */
+.ring-swatch { position: relative; }
+.ring-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+/* when a photo successfully loads, hide the drawn SVG underneath */
+.ring-swatch:has(.ring-photo) .ring-svg { opacity: 0; }
