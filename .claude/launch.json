@@ -2,6 +2,13 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "VitaRinq Site",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server.js"],
+      "port": 5000,
+      "autoPort": true
+    },
+    {
       "name": "Python static server",
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8000"],
