@@ -992,7 +992,7 @@ details p,
   transform: translateY(-3px);
 }
 
-.journey-grid span {
+.journey-grid .journey-time {
   display: inline-flex;
   margin-bottom: 28px;
   padding: 8px 12px;
@@ -1665,7 +1665,7 @@ details p,
 
 .segment-marker {
   position: absolute;
-  top: -12px;
+  top: -8px;
   left: var(--pos, 50%);
   width: 0;
   height: 0;
@@ -1676,7 +1676,7 @@ details p,
 }
 
 .segment-marker.marker-down {
-  top: -12px;
+  top: -8px;
   border-top-color: var(--c-blue);
 }
 
@@ -1757,6 +1757,82 @@ details p,
   transform: translateY(-3px);
   box-shadow: 0 16px 48px rgba(37, 33, 27, 0.1);
   border-color: rgba(215, 178, 109, 0.22);
+}
+
+/* ─── Charging-case showcase ─── */
+.charge-showcase {
+  display: grid;
+  grid-template-columns: 0.85fr 1.4fr;
+  align-items: center;
+  gap: clamp(24px, 5vw, 56px);
+  margin-top: 24px;
+  padding: clamp(26px, 4vw, 52px);
+  border: 1px solid rgba(215, 178, 109, 0.2);
+  border-radius: calc(var(--radius) + 6px);
+  background:
+    radial-gradient(120% 120% at 82% 0%, rgba(215, 178, 109, 0.1), transparent 58%),
+    linear-gradient(180deg, rgba(255, 250, 240, 0.92), rgba(255, 250, 240, 0.55));
+  box-shadow: 0 24px 60px rgba(37, 33, 27, 0.08);
+  overflow: hidden;
+}
+/* two real product photos, framed as rounded tiles */
+.charge-gallery {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+.charge-shot {
+  /* transparent product cut-out — floats on the cream panel, no frame */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.charge-shot img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 340px; /* keep the photo to roughly the height of the copy block */
+  filter: drop-shadow(0 22px 34px rgba(37, 33, 27, 0.32));
+  transition: transform 0.6s var(--ease-spring);
+}
+.charge-shot:hover img { transform: translateY(-4px) scale(1.02); }
+.charge-copy h3 {
+  font-size: clamp(1.45rem, 2.6vw, 2.05rem);
+  margin: 10px 0 14px;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.charge-points {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.charge-points li {
+  position: relative;
+  padding-left: 28px;
+  color: #6a625a;
+  font-weight: 500;
+  font-size: 0.98rem;
+}
+.charge-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.32em;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, #f0d28f, #b8923f);
+  box-shadow: 0 0 0 4px rgba(215, 178, 109, 0.14);
+}
+@media (max-width: 760px) {
+  .charge-showcase {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
 }
 
 /* ─── Specs ─── */
@@ -2179,7 +2255,7 @@ details p,
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
   gap: clamp(28px, 5vw, 72px);
-  align-items: center;
+  align-items: start;
   background:
     linear-gradient(135deg, #eee4d5 0%, #f8f3e9 55%, #dfd1bb 100%);
   color: var(--ink);
@@ -2198,6 +2274,18 @@ details p,
 }
 
 .price-copy { max-width: 760px; }
+
+/* product visual under the Founders copy — transparent cut-out, floats on the panel */
+.price-visual {
+  margin: clamp(28px, 5vw, 56px) auto 0; /* centered relative to the text block */
+  max-width: 360px;
+}
+.price-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 24px 38px rgba(68, 52, 34, 0.3));
+}
 
 .price-card {
   padding: 28px;
@@ -2492,6 +2580,8 @@ details p {
   .pricing {
     grid-template-columns: 1fr;
   }
+  /* keep the product visual a tasteful accent when stacked, not a full-height block */
+  .price-visual { margin-top: 28px; max-width: 260px; margin-inline: auto; }
 
   .hero {
     min-height: auto;
@@ -2541,13 +2631,15 @@ details p {
     margin-top: 28px;
   }
 
-  .proof-band,
   .feature-grid,
   .journey-grid,
   .compare-grid,
   .design-grid {
     grid-template-columns: 1fr;
   }
+
+  /* 2 cartes par ligne sur mobile */
+  .proof-band { grid-template-columns: repeat(2, 1fr); }
 
   .section { padding: 52px 16px; }
   .section-heading { margin-bottom: 24px; }
@@ -2618,11 +2710,16 @@ details p {
     border-radius: 0;
   }
 
-  .proof-band div {
+  /* 2×2 grid: clean dividers, no stray vertical lines */
+  .proof-band > div + div::before { display: none; }
+  .proof-band > div {
+    padding: 28px clamp(14px, 4vw, 24px);
     border-right: 0;
-    border-bottom: 1px solid rgba(255, 250, 240, 0.08);
+    border-bottom: 0;
   }
-  .proof-band div:last-child { border-bottom: 0; }
+  .proof-band > div:nth-child(odd) { border-right: 1px solid rgba(255, 250, 240, 0.08); }
+  .proof-band > div:nth-child(1),
+  .proof-band > div:nth-child(2) { border-bottom: 1px solid rgba(255, 250, 240, 0.08); }
 
   .phone-shell {
     padding: 18px 14px 0;
@@ -3102,7 +3199,9 @@ details p {
 /* ─── Journey timeline — premium upgrade ─── */
 .journey-grid { gap: 24px; counter-reset: jstep; }
 .journey-grid article {
-  padding: 30px 28px 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 28px 26px;
   border-radius: 18px;
   background:
     radial-gradient(120% 80% at 0% 0%, rgba(215,178,109,0.07), transparent 55%),
@@ -3120,20 +3219,25 @@ details p {
   opacity: 0.5;
   transition: opacity .4s var(--ease-out);
 }
-/* faint step number watermark */
+/* faint step number watermark — centered behind the content */
 .journey-grid article::after {
   counter-increment: jstep;
   content: "0" counter(jstep);
   position: absolute;
-  right: 18px;
-  bottom: 8px;
-  font-size: 3.2rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5.5rem;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.04em;
-  color: rgba(238,224,199,0.05);
+  color: rgba(238,224,199,0.09);
   pointer-events: none;
+  z-index: 0;
 }
+/* keep card content above the watermark */
+.journey-top,
+.journey-grid h3 { position: relative; z-index: 1; }
 .journey-grid article:hover { border-color: rgba(215,178,109,0.4); box-shadow: 0 28px 70px rgba(0,0,0,0.5); }
 .journey-grid article:hover::before { opacity: 1; }
 
@@ -3160,23 +3264,120 @@ details p {
   border: 1px solid rgba(215,178,109,0.3);
   box-shadow: none;
 }
-/* icon medallion */
-.journey-icon {
+/* icon medallion — refined gold glass (overrides the generic .journey-grid span fill) */
+.journey-grid .journey-icon {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  color: var(--champagne);
-  background: linear-gradient(135deg, rgba(215,178,109,0.16), rgba(215,178,109,0.04));
-  border: 1px solid rgba(215,178,109,0.22);
-  box-shadow: inset 0 1px 0 rgba(255,250,240,0.06);
-  transition: transform .4s var(--ease-spring), border-color .4s;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border-radius: 13px;
+  color: #f4dca0;
+  background:
+    radial-gradient(120% 120% at 30% 20%, rgba(215,178,109,0.28), rgba(215,178,109,0.06) 70%),
+    linear-gradient(160deg, rgba(255,250,240,0.05), rgba(255,250,240,0));
+  border: 1px solid rgba(215,178,109,0.3);
+  box-shadow:
+    inset 0 1px 0 rgba(255,250,240,0.14),
+    inset 0 -8px 14px rgba(0,0,0,0.25),
+    0 6px 16px rgba(0,0,0,0.3);
+  transition: transform .4s var(--ease-spring), border-color .4s, box-shadow .4s;
 }
 .journey-icon svg { width: 22px; height: 22px; }
-.journey-grid article:hover .journey-icon { transform: translateY(-2px) rotate(-3deg); border-color: rgba(215,178,109,0.45); }
+.journey-grid article:hover .journey-icon {
+  transform: translateY(-2px) rotate(-3deg);
+  border-color: rgba(215,178,109,0.55);
+  box-shadow:
+    inset 0 1px 0 rgba(255,250,240,0.18),
+    inset 0 -8px 14px rgba(0,0,0,0.25),
+    0 10px 22px rgba(215,178,109,0.18);
+}
 .journey-grid h3 { font-size: 1.22rem; margin: 0 0 10px; letter-spacing: -0.01em; }
 .journey-grid p { position: relative; z-index: 1; }
+
+/* real data readout — one clean glass chip, grounds each moment in ring metrics */
+.journey-metric {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 9px;
+  align-self: center; /* center the chip horizontally in the card */
+  max-width: 100%;
+  margin-top: 22px;
+  padding: 8px 15px 8px 13px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,250,240,0.07), rgba(255,250,240,0.025));
+  border: 1px solid rgba(238,224,199,0.14);
+  box-shadow: inset 0 1px 0 rgba(255,250,240,0.06), 0 4px 16px rgba(0,0,0,0.25);
+  overflow: hidden;
+  transition: border-color .4s var(--ease-out), transform .4s var(--ease-spring), box-shadow .4s;
+}
+/* gold shimmer sweep — staggered per card for a calm wave */
+.journey-metric::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(244,220,160,0.22) 50%, transparent 65%);
+  transform: translateX(-130%);
+  animation: journeyShimmer 6s var(--ease-out) infinite;
+  pointer-events: none;
+}
+.journey-grid article:nth-child(2) .journey-metric::after { animation-delay: 2s; }
+.journey-grid article:nth-child(3) .journey-metric::after { animation-delay: 4s; }
+@keyframes journeyShimmer {
+  0%   { transform: translateX(-130%); }
+  18%  { transform: translateX(130%); }
+  100% { transform: translateX(130%); }
+}
+.journey-grid article:hover .journey-metric {
+  border-color: rgba(215,178,109,0.32);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255,250,240,0.08), 0 8px 22px rgba(0,0,0,0.32);
+}
+/* value text */
+.journey-metric-val {
+  position: relative;
+  z-index: 1;
+  color: #efe3cd;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.004em;
+  line-height: 1.35;
+  /* wrap instead of clipping inside narrow tablet cards (761–920px) */
+  overflow-wrap: anywhere;
+}
+/* status dot */
+.journey-dot {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--champagne);
+  box-shadow: 0 0 8px rgba(215,178,109,0.6);
+}
+/* live indicator for the active-day card */
+.journey-metric.is-live .journey-dot {
+  background: #6fce97;
+  box-shadow: 0 0 8px rgba(111,206,151,0.7);
+  animation: journeyPulse 2.4s var(--ease-out) infinite;
+}
+@keyframes journeyPulse {
+  0%   { box-shadow: 0 0 8px rgba(111,206,151,0.5), 0 0 0 0 rgba(111,206,151,0.5); }
+  70%  { box-shadow: 0 0 8px rgba(111,206,151,0.5), 0 0 0 7px rgba(111,206,151,0); }
+  100% { box-shadow: 0 0 8px rgba(111,206,151,0.5), 0 0 0 0 rgba(111,206,151,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-metric::after,
+  .journey-metric.is-live .journey-dot { animation: none; }
+  .journey-metric::after { display: none; }
+}
 
 /* ─── ring-photo: real 800×800 product photo, premium tile ─── */
 .ring-swatch {

@@ -238,6 +238,10 @@
             </div>
             <h3 data-i18n="journey.morningTitle">Réveil</h3>
             <p data-i18n="journey.morningBody">Score de sommeil et readiness pour décider si la journée doit être intense ou légère.</p>
+            <div class="journey-metric">
+              <span class="journey-dot" aria-hidden="true"></span>
+              <span class="journey-metric-val" data-i18n="journey.morningMetric">Readiness 82 · Sommeil 7 h 21</span>
+            </div>
           </article>
           <article class="reveal reveal-delay-1">
             <div class="journey-top">
@@ -248,6 +252,10 @@
             </div>
             <h3 data-i18n="journey.dayTitle">Journée active</h3>
             <p data-i18n="journey.dayBody">Fréquence cardiaque, pas et temps actif se mettent à jour sans ouvrir l'application.</p>
+            <div class="journey-metric is-live">
+              <span class="journey-dot" aria-hidden="true"></span>
+              <span class="journey-metric-val" data-i18n="journey.dayMetric">72 bpm · 9 240 pas</span>
+            </div>
           </article>
           <article class="reveal reveal-delay-2">
             <div class="journey-top">
@@ -258,6 +266,10 @@
             </div>
             <h3 data-i18n="journey.eveningTitle">Retour au calme</h3>
             <p data-i18n="journey.eveningBody">Une recommandation simple pour préserver votre récupération avant la prochaine nuit.</p>
+            <div class="journey-metric">
+              <span class="journey-dot" aria-hidden="true"></span>
+              <span class="journey-metric-val" data-i18n="journey.eveningMetric">Couvre-feu conseillé · 23:30</span>
+            </div>
           </article>
         </div>
       </section>
@@ -701,6 +713,24 @@
             <p data-i18n="design.card4Body">Insights quotidiens, historique, exports, mises à jour sans fil (OTA) et mode privé pour garder la main sur vos données.</p>
           </article>
         </div>
+
+        <div class="charge-showcase reveal-scale">
+          <div class="charge-copy">
+            <p class="eyebrow" data-i18n="charge.eyebrow">Boîtier de recharge</p>
+            <h3 data-i18n="charge.title">La recharge, posée et oubliée.</h3>
+            <p data-i18n="charge.body">Un boîtier rond compact à clapet, stable sur le bureau ou en voyage. Déposez la bague sur le dock magnétique auto-centré : une charge complète en ~1 heure couvre une semaine d'autonomie.</p>
+            <ul class="charge-points">
+              <li data-i18n="charge.p1">Témoin de charge intégré</li>
+              <li data-i18n="charge.p2">Charge complète en ~1 h</li>
+              <li data-i18n="charge.p3">Dock circulaire magnétique</li>
+            </ul>
+          </div>
+          <div class="charge-gallery">
+            <figure class="charge-shot">
+              <img src="assets/box_2.png" alt="Bague Vitarinq en charge dans le boîtier ouvert, témoin lumineux rouge allumé" loading="lazy" data-i18n-attr="alt:charge.imageAlt">
+            </figure>
+          </div>
+        </div>
       </section>
 
       <section class="section specs" id="specs" aria-labelledby="specs-title">
@@ -782,6 +812,9 @@
             Une première série limitée pour valider le produit, construire la communauté et livrer les premiers
             exemplaires avec un support direct de l'équipe.
           </p>
+          <figure class="price-visual">
+            <img src="assets/box_1.png" alt="Boîtier de recharge Vitarinq ouvert avec la bague" loading="lazy" data-i18n-attr="alt:charge.imageAlt2">
+          </figure>
         </div>
         <div class="price-card reveal-scale">
           <span class="badge" data-i18n="pricing.badge">Précommande</span>
@@ -1120,12 +1153,15 @@
           "journey.morningTime": "07:12",
           "journey.morningTitle": "Réveil",
           "journey.morningBody": "Score de sommeil et readiness pour décider si la journée doit être intense ou légère.",
+          "journey.morningMetric": "Readiness 82 · Sommeil 7 h 21",
           "journey.dayTime": "13:40",
           "journey.dayTitle": "Journée active",
           "journey.dayBody": "Fréquence cardiaque, pas et temps actif se mettent à jour sans ouvrir l'application.",
+          "journey.dayMetric": "72 bpm · 9 240 pas",
           "journey.eveningTime": "22:18",
           "journey.eveningTitle": "Retour au calme",
           "journey.eveningBody": "Une recommandation simple pour préserver votre récupération avant la prochaine nuit.",
+          "journey.eveningMetric": "Couvre-feu conseillé · 23:30",
           "health.eyebrow": "Capteurs",
           "health.title": "Des signaux utiles, pas du bruit.",
           "health.body": "Vitarinq combine PPG multi-longueurs d'onde, accéléromètre 3 axes et un ECG échantillonné à 500 Hz pour produire une vue continue de votre physiologie — jusqu'à l'analyse fine du rythme nocturne (diagramme de Lorenz, mesuré entre 0 h et 6 h).",
@@ -1176,6 +1212,14 @@
           "design.card3Body": "Jusqu'à 7 jours sur une seule charge: portez la bague en continu, sans souci de batterie.",
           "design.card4Title": "App claire",
           "design.card4Body": "Insights quotidiens, historique, exports, mises à jour sans fil (OTA) et mode privé pour garder la main sur vos données.",
+          "charge.eyebrow": "Boîtier de recharge",
+          "charge.title": "La recharge, posée et oubliée.",
+          "charge.body": "Un boîtier rond compact à clapet, stable sur le bureau ou en voyage. Déposez la bague sur le dock magnétique auto-centré : une charge complète en ~1 heure couvre une semaine d'autonomie.",
+          "charge.p1": "Témoin de charge intégré",
+          "charge.p2": "Charge complète en ~1 h",
+          "charge.p3": "Dock circulaire magnétique",
+          "charge.imageAlt": "Bague Vitarinq en charge dans le boîtier ouvert, témoin lumineux rouge allumé",
+          "charge.imageAlt2": "Bague noire posée à côté du boîtier de recharge ouvert",
           "compare.eyebrow": "Positionnement",
           "compare.title": "Une bague santé premium, claire, élégante et vraiment discrète.",
           "compare.body": "La page met l'accent sur ce qui rassure avant l'achat: bénéfices santé, mesures concrètes, autonomie, protection des données, sizing et prix early access.",
@@ -1365,12 +1409,15 @@
           "journey.morningTime": "7:12 AM",
           "journey.morningTitle": "Wake",
           "journey.morningBody": "Sleep score and readiness help you decide whether the day should be intense or light.",
+          "journey.morningMetric": "Readiness 82 · Sleep 7h 21m",
           "journey.dayTime": "1:40 PM",
           "journey.dayTitle": "Move",
           "journey.dayBody": "Heart rate, steps and active time update quietly without opening the app.",
+          "journey.dayMetric": "72 bpm · 9,240 steps",
           "journey.eveningTime": "10:18 PM",
           "journey.eveningTitle": "Wind down",
           "journey.eveningBody": "One clear recommendation helps protect recovery before the next night.",
+          "journey.eveningMetric": "Wind-down suggested · 11:30 PM",
           "health.eyebrow": "Sensors",
           "health.title": "Useful signals, not noise.",
           "health.body": "Vitarinq combines multi-wavelength PPG, a 3-axis accelerometer and a 500 Hz ECG to build a continuous view of your physiology — down to fine analysis of your nighttime rhythm (Lorenz plot, measured between midnight and 6 AM).",
@@ -1421,6 +1468,14 @@
           "design.card3Body": "Up to 7 days on a single charge: wear the ring non-stop, with zero battery worries.",
           "design.card4Title": "Clear app",
           "design.card4Body": "Daily insights, history, exports, over-the-air (OTA) updates and private mode keep you in control of your data.",
+          "charge.eyebrow": "Charging case",
+          "charge.title": "Charging, set and forget.",
+          "charge.body": "A compact round clamshell case, stable on your desk or on the go. Drop the ring onto the self-centering magnetic dock — a full charge in about an hour covers a week of battery.",
+          "charge.p1": "Built-in charge indicator",
+          "charge.p2": "Full charge in ~1 h",
+          "charge.p3": "Circular magnetic dock",
+          "charge.imageAlt": "Vitarinq ring charging inside the open case, red indicator light on",
+          "charge.imageAlt2": "Black ring resting next to the open charging case",
           "compare.eyebrow": "Positioning",
           "compare.title": "A premium health ring that feels clear, elegant and truly discreet.",
           "compare.body": "The page focuses on the purchase signals that matter: health benefits, concrete metrics, battery life, privacy, sizing and early-access pricing.",
