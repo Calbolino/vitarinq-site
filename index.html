@@ -28,6 +28,7 @@
       <nav class="nav-links" id="nav-links" aria-label="Sections">
         <a href="#experience" data-i18n="nav.experience">Expérience</a>
         <a href="#health" data-i18n="nav.health">Santé</a>
+        <a href="#specs" data-i18n="nav.specs">Spécifications</a>
         <a href="#pricing" data-i18n="nav.preorder">Précommande</a>
       </nav>
       <div class="header-actions">
@@ -267,25 +268,164 @@
             <p class="eyebrow" data-i18n="health.eyebrow">Capteurs</p>
             <h2 id="health-title" data-i18n="health.title">Des signaux utiles, pas du bruit.</h2>
             <p data-i18n="health.body">
-              Vitarinq combine PPG multi-longueurs d'onde, accéléromètre basse consommation et suivi thermique
-              pour produire une vue continue de votre état physiologique.
+              Vitarinq combine PPG multi-longueurs d'onde, accéléromètre 3 axes et un ECG échantillonné à 500 Hz
+              pour produire une vue continue de votre physiologie — jusqu'à l'analyse fine du rythme nocturne
+              (diagramme de Lorenz, mesuré entre 0 h et 6 h).
             </p>
           </div>
           <div class="metric-stack" aria-label="Exemples de mesures" data-i18n-attr="aria-label:health.metricsAria">
-            <div class="metric">
-              <span>HRV</span>
-              <strong>+18%</strong>
-              <small data-i18n="health.metric1">tendance 7 jours</small>
+            <article class="metric metric-hrv">
+              <div class="metric-head">
+                <span class="metric-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-6 3 12 3-9 2 5h5"/></svg></span>
+                <span class="metric-name">HRV</span>
+              </div>
+              <strong class="metric-value">45<em>ms</em></strong>
+              <svg class="metric-spark" viewBox="0 0 120 26" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,15 17,11 34,17 51,8 68,14 85,7 102,12 120,17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="metric-status" data-i18n="health.hrvSub">équilibre nerveux</span>
+            </article>
+            <article class="metric metric-sleep">
+              <div class="metric-head">
+                <span class="metric-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M21 12.8A9 9 0 1 1 11.2 3a7.2 7.2 0 0 0 9.8 9.8z"/></svg></span>
+                <span class="metric-name" data-i18n="health.metricSleep">Sommeil</span>
+              </div>
+              <strong class="metric-value">6<em>h</em>05</strong>
+              <div class="metric-bars" aria-hidden="true"><i style="--h:50%"></i><i style="--h:85%"></i><i style="--h:40%"></i><i style="--h:70%"></i><i style="--h:92%"></i><i style="--h:55%"></i><i style="--h:35%"></i></div>
+              <span class="metric-status" data-i18n="health.statusGood">Très bon</span>
+            </article>
+            <article class="metric metric-stress">
+              <div class="metric-head">
+                <span class="metric-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="0.9" fill="currentColor"/><circle cx="15" cy="10" r="0.9" fill="currentColor"/><path d="M8.5 14.5c1 1 2.2 1.4 3.5 1.4s2.5-.4 3.5-1.4"/></svg></span>
+                <span class="metric-name" data-i18n="health.stress">Stress</span>
+              </div>
+              <strong class="metric-value">20</strong>
+              <div class="metric-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="metric-status" data-i18n="health.statusRelaxed">Détente</span>
+            </article>
+            <article class="metric metric-spo2">
+              <div class="metric-head">
+                <span class="metric-ico" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 3c3 4 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 3-7 6-11z"/></svg></span>
+                <span class="metric-name">SpO₂</span>
+              </div>
+              <strong class="metric-value">97<em>%</em></strong>
+              <div class="metric-track" aria-hidden="true"><span style="width:97%"></span></div>
+              <span class="metric-status" data-i18n="health.statusNormal">Normal</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section sleep" id="sleep" aria-labelledby="sleep-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="sleep.eyebrow">Sommeil</p>
+          <h2 id="sleep-title" data-i18n="sleep.title">Votre nuit, décodée par stades.</h2>
+          <p data-i18n="sleep.body">
+            Réveils, sommeil paradoxal, léger et profond : Vitarinq reconstitue l'architecture complète
+            de votre nuit et la traduit en un score de qualité clair, chaque matin.
+          </p>
+        </div>
+        <div class="sleep-panel reveal-scale">
+          <div class="sleep-score">
+            <div class="sleep-ring" role="img" aria-label="8 heures 8 minutes de sommeil, qualité très bonne" data-i18n-attr="aria-label:sleep.ringAria">
+              <svg viewBox="0 0 130 130" aria-hidden="true">
+                <circle class="sr-track" cx="65" cy="65" r="54"/>
+                <circle class="sr-track" cx="65" cy="65" r="40"/>
+                <circle class="sr-dur" cx="65" cy="65" r="54"/>
+                <circle class="sr-qual" cx="65" cy="65" r="40"/>
+              </svg>
+              <div class="sleep-ring-text">
+                <strong>8<em>h</em> 08</strong>
+                <span data-i18n="sleep.ringSub">de sommeil</span>
+              </div>
             </div>
-            <div class="metric">
-              <span data-i18n="health.metricSleep">Sommeil</span>
-              <strong>86</strong>
-              <small data-i18n="health.metric2">score de nuit</small>
+            <div class="sleep-quality">
+              <span class="sleep-quality-label" data-i18n="sleep.qualityLabel">Qualité de la nuit</span>
+              <strong data-i18n="sleep.qualityValue">Très bon</strong>
+              <span class="sleep-stars" aria-hidden="true">★★★★<span class="star-empty">★</span></span>
             </div>
-            <div class="metric">
-              <span>Readiness</span>
-              <strong data-i18n="health.metricReady">Optimal</strong>
-              <small data-i18n="health.metric3">entraînement possible</small>
+          </div>
+          <div class="sleep-detail">
+            <div class="sleep-detail-head">
+              <span class="sd-label" data-i18n="sleep.longLabel">Long sommeil</span>
+              <strong class="sd-total">8<em>h</em> 08<em>m</em></strong>
+            </div>
+            <div class="sleep-hypno" aria-hidden="true">
+              <svg viewBox="0 0 340 108" preserveAspectRatio="none">
+                <rect class="hb-rem" x="30" y="6" width="4" height="40" rx="2"/>
+                <rect class="hb-rem" x="44" y="6" width="4" height="40" rx="2"/>
+                <rect class="hb-rem" x="92" y="6" width="4" height="40" rx="2"/>
+                <rect class="hb-rem" x="150" y="6" width="4" height="40" rx="2"/>
+                <rect class="hb-rem" x="161" y="6" width="4" height="40" rx="2"/>
+                <rect class="hb-rem" x="232" y="6" width="4" height="40" rx="2"/>
+                <rect class="hb-rem" x="286" y="6" width="4" height="40" rx="2"/>
+                <rect class="hb-light" x="4" y="50" width="28" height="26" rx="7"/>
+                <rect class="hb-light" x="36" y="50" width="16" height="26" rx="7"/>
+                <rect class="hb-light" x="56" y="50" width="24" height="26" rx="7"/>
+                <rect class="hb-light" x="84" y="50" width="30" height="26" rx="7"/>
+                <rect class="hb-light" x="118" y="50" width="14" height="26" rx="7"/>
+                <rect class="hb-light" x="136" y="50" width="24" height="26" rx="7"/>
+                <rect class="hb-light" x="164" y="50" width="16" height="26" rx="7"/>
+                <rect class="hb-light" x="186" y="50" width="28" height="26" rx="7"/>
+                <rect class="hb-light" x="218" y="50" width="22" height="26" rx="7"/>
+                <rect class="hb-light" x="244" y="50" width="30" height="26" rx="7"/>
+                <rect class="hb-light" x="278" y="50" width="16" height="26" rx="7"/>
+                <rect class="hb-light" x="298" y="50" width="16" height="26" rx="7"/>
+                <rect class="hb-light" x="318" y="50" width="18" height="26" rx="7"/>
+                <rect class="hb-deep" x="8" y="84" width="10" height="22" rx="7"/>
+                <rect class="hb-deep" x="40" y="84" width="16" height="22" rx="7"/>
+                <rect class="hb-deep" x="70" y="84" width="40" height="22" rx="7"/>
+                <rect class="hb-deep" x="118" y="84" width="14" height="22" rx="7"/>
+                <rect class="hb-deep" x="150" y="84" width="22" height="22" rx="7"/>
+                <rect class="hb-deep" x="190" y="84" width="16" height="22" rx="7"/>
+                <rect class="hb-deep" x="222" y="84" width="34" height="22" rx="7"/>
+                <rect class="hb-deep" x="264" y="84" width="18" height="22" rx="7"/>
+                <rect class="hb-deep" x="300" y="84" width="30" height="22" rx="7"/>
+              </svg>
+            </div>
+            <p class="sleep-schedule"><span>00:27</span><span data-i18n="sleep.schedule">nuit du 31 mai</span><span>08:35</span></p>
+            <ul class="stage-list">
+              <li class="stage stage-awake">
+                <span class="stage-dot" aria-hidden="true"></span>
+                <span class="stage-name" data-i18n="sleep.stageAwake">Réveillé</span>
+                <span class="stage-pct">0%</span>
+                <span class="stage-dur" data-i18n="sleep.durAwake">0 m</span>
+              </li>
+              <li class="stage stage-rem">
+                <span class="stage-dot" aria-hidden="true"></span>
+                <span class="stage-name" data-i18n="sleep.stageRem">Sommeil paradoxal</span>
+                <span class="stage-pct">5%</span>
+                <span class="stage-dur" data-i18n="sleep.durRem">26 m</span>
+              </li>
+              <li class="stage stage-light">
+                <span class="stage-dot" aria-hidden="true"></span>
+                <span class="stage-name" data-i18n="sleep.stageLight">Léger</span>
+                <span class="stage-pct">59%</span>
+                <span class="stage-dur" data-i18n="sleep.durLight">4 h 47 m</span>
+              </li>
+              <li class="stage stage-deep">
+                <span class="stage-dot" aria-hidden="true"></span>
+                <span class="stage-name" data-i18n="sleep.stageDeep">Profond</span>
+                <span class="stage-pct">36%</span>
+                <span class="stage-dur" data-i18n="sleep.durDeep">2 h 55 m</span>
+              </li>
+            </ul>
+            <div class="sleep-trend">
+              <div class="trend-head">
+                <span class="trend-label" data-i18n="sleep.trendLabel">Tendance · moyenne</span>
+                <strong class="trend-avg">7<em>h</em> 53<em>m</em></strong>
+                <span class="trend-delta" data-i18n="sleep.trendDelta">▲ +11 min cette semaine</span>
+              </div>
+              <div class="trend-chart" aria-hidden="true">
+                <div class="trend-bars">
+                  <span class="tb" style="--t:73%"><i class="ts-awake" style="--h:2%"></i><i class="ts-rem" style="--h:7%"></i><i class="ts-light" style="--h:57%"></i><i class="ts-deep" style="--h:34%"></i></span>
+                  <span class="tb" style="--t:70%"><i class="ts-awake" style="--h:2%"></i><i class="ts-rem" style="--h:6%"></i><i class="ts-light" style="--h:58%"></i><i class="ts-deep" style="--h:34%"></i></span>
+                  <span class="tb" style="--t:82%"><i class="ts-awake" style="--h:2%"></i><i class="ts-rem" style="--h:6%"></i><i class="ts-light" style="--h:55%"></i><i class="ts-deep" style="--h:37%"></i></span>
+                  <span class="tb" style="--t:76%"><i class="ts-awake" style="--h:2%"></i><i class="ts-rem" style="--h:6%"></i><i class="ts-light" style="--h:57%"></i><i class="ts-deep" style="--h:35%"></i></span>
+                  <span class="tb" style="--t:83%"><i class="ts-awake" style="--h:2%"></i><i class="ts-rem" style="--h:6%"></i><i class="ts-light" style="--h:56%"></i><i class="ts-deep" style="--h:36%"></i></span>
+                  <span class="tb" style="--t:84%"><i class="ts-awake" style="--h:2%"></i><i class="ts-rem" style="--h:5%"></i><i class="ts-light" style="--h:58%"></i><i class="ts-deep" style="--h:35%"></i></span>
+                  <span class="tb" style="--t:81%"><i class="ts-awake" style="--h:0%"></i><i class="ts-rem" style="--h:5%"></i><i class="ts-light" style="--h:59%"></i><i class="ts-deep" style="--h:36%"></i></span>
+                </div>
+                <div class="trend-days"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -403,10 +543,29 @@
                   <span class="card-title" data-i18n="app.sleep">Sommeil</span>
                 </header>
                 <strong class="card-value">6<em>h</em> 5<em>m</em></strong>
-                <div class="card-bars" aria-hidden="true">
-                  <i style="--h:55%"></i><i style="--h:90%"></i><i style="--h:40%"></i><i style="--h:75%"></i><i style="--h:60%"></i><i style="--h:85%"></i><i style="--h:30%"></i>
+                <div class="card-hypno" aria-hidden="true">
+                  <svg viewBox="0 0 132 40" preserveAspectRatio="none">
+                    <rect class="hb-rem" x="18" y="2" width="3" height="15" rx="1.5"/>
+                    <rect class="hb-rem" x="45" y="2" width="3" height="15" rx="1.5"/>
+                    <rect class="hb-rem" x="62" y="2" width="3" height="15" rx="1.5"/>
+                    <rect class="hb-rem" x="104" y="2" width="3" height="15" rx="1.5"/>
+                    <rect class="hb-light" x="2" y="19" width="16" height="10" rx="3"/>
+                    <rect class="hb-light" x="22" y="19" width="11" height="10" rx="3"/>
+                    <rect class="hb-light" x="37" y="19" width="15" height="10" rx="3"/>
+                    <rect class="hb-light" x="56" y="19" width="9" height="10" rx="3"/>
+                    <rect class="hb-light" x="69" y="19" width="18" height="10" rx="3"/>
+                    <rect class="hb-light" x="93" y="19" width="9" height="10" rx="3"/>
+                    <rect class="hb-light" x="106" y="19" width="13" height="10" rx="3"/>
+                    <rect class="hb-light" x="123" y="19" width="7" height="10" rx="3"/>
+                    <rect class="hb-deep" x="4" y="32" width="9" height="8" rx="2.5"/>
+                    <rect class="hb-deep" x="26" y="32" width="7" height="8" rx="2.5"/>
+                    <rect class="hb-deep" x="48" y="32" width="20" height="8" rx="2.5"/>
+                    <rect class="hb-deep" x="82" y="32" width="8" height="8" rx="2.5"/>
+                    <rect class="hb-deep" x="98" y="32" width="16" height="8" rx="2.5"/>
+                    <rect class="hb-deep" x="122" y="32" width="9" height="8" rx="2.5"/>
+                  </svg>
                 </div>
-                <small>00:24 - 06:29</small>
+                <small>00:24 – 06:29</small>
               </article>
 
               <article class="health-card heart">
@@ -531,7 +690,7 @@
           </article>
           <article class="reveal reveal-delay-1">
             <h3 data-i18n="design.card2Title">Charge compacte</h3>
-            <p data-i18n="design.card2Body">Un dock rond noir, stable et compact, pensé pour poser la bague sans effort chaque semaine.</p>
+            <p data-i18n="design.card2Body">Un boîtier rond en aluminium, stable et compact : recharge complète en ~1 heure pour reposer la bague sans effort chaque semaine.</p>
           </article>
           <article class="reveal reveal-delay-2">
             <h3 data-i18n="design.card3Title">7 jours d'autonomie</h3>
@@ -539,9 +698,80 @@
           </article>
           <article class="reveal reveal-delay-3">
             <h3 data-i18n="design.card4Title">App claire</h3>
-            <p data-i18n="design.card4Body">Insights quotidiens, historique, exports et mode privé pour garder la main sur vos données.</p>
+            <p data-i18n="design.card4Body">Insights quotidiens, historique, exports, mises à jour sans fil (OTA) et mode privé pour garder la main sur vos données.</p>
           </article>
         </div>
+      </section>
+
+      <section class="section specs" id="specs" aria-labelledby="specs-title">
+        <div class="section-heading reveal">
+          <p class="eyebrow" data-i18n="specs.eyebrow">Spécifications</p>
+          <h2 id="specs-title" data-i18n="specs.title">La fiche technique, sans le jargon.</h2>
+          <p data-i18n="specs.body">
+            Tout ce qui tient dans un anneau de quelques grammes : capteurs de précision,
+            autonomie d'une semaine et une vraie résistance à l'eau.
+          </p>
+        </div>
+        <div class="spec-grid reveal" aria-label="Spécifications techniques" data-i18n-attr="aria-label:specs.aria">
+          <article class="spec-card">
+            <h3 data-i18n="specs.g1Title">Matériaux & finition</h3>
+            <dl>
+              <div><dt data-i18n="specs.g1k1">Surface extérieure</dt><dd data-i18n="specs.g1v1">Alliage de titane</dd></div>
+              <div><dt data-i18n="specs.g1k2">Structure interne</dt><dd data-i18n="specs.g1v2">Résine époxy, intérieur hypoallergénique</dd></div>
+              <div><dt data-i18n="specs.g1k3">Finitions</dt><dd data-i18n="specs.g1v3">Noir graphite · Argent · Champagne</dd></div>
+            </dl>
+          </article>
+          <article class="spec-card">
+            <h3 data-i18n="specs.g2Title">Santé avancée</h3>
+            <dl>
+              <div><dt data-i18n="specs.g2k1">ECG</dt><dd data-i18n="specs.g2v1">Échantillonnage 500 Hz</dd></div>
+              <div><dt data-i18n="specs.g2k2">Stress (EDA)</dt><dd data-i18n="specs.g2v2">Activité électrodermale</dd></div>
+              <div><dt data-i18n="specs.g2k3">FC + HRV · SpO₂</dt><dd data-i18n="specs.g2v3">Récupération & oxygène</dd></div>
+              <div><dt data-i18n="specs.g2k4">Analyse nocturne</dt><dd data-i18n="specs.g2v4">Diagramme de Lorenz · 0 h–6 h</dd></div>
+            </dl>
+          </article>
+          <article class="spec-card">
+            <h3 data-i18n="specs.g3Title">Capteurs</h3>
+            <dl>
+              <div><dt data-i18n="specs.g3k1">Optique</dt><dd data-i18n="specs.g3v1">Double PPG multi-longueurs d'onde</dd></div>
+              <div><dt data-i18n="specs.g3k2">Mouvement</dt><dd data-i18n="specs.g3v2">Accéléromètre 3 axes</dd></div>
+              <div><dt data-i18n="specs.g3k3">Processeur</dt><dd data-i18n="specs.g3v3">Puce dédiée basse consommation</dd></div>
+            </dl>
+          </article>
+          <article class="spec-card">
+            <h3 data-i18n="specs.g4Title">Autonomie & charge</h3>
+            <dl>
+              <div><dt data-i18n="specs.g4k1">Autonomie</dt><dd data-i18n="specs.g4v1">4 à 7 jours</dd></div>
+              <div><dt data-i18n="specs.g4k2">Recharge complète</dt><dd data-i18n="specs.g4v2">~1 heure (0 → 100 %)</dd></div>
+              <div><dt data-i18n="specs.g4k3">Boîtier de charge</dt><dd data-i18n="specs.g4v3">Aluminium · USB</dd></div>
+              <div><dt data-i18n="specs.g4k4">Mises à jour</dt><dd data-i18n="specs.g4v4">Sans fil (OTA)</dd></div>
+            </dl>
+          </article>
+          <article class="spec-card">
+            <h3 data-i18n="specs.g5Title">Résistance</h3>
+            <dl>
+              <div><dt data-i18n="specs.g5k1">Étanchéité</dt><dd data-i18n="specs.g5v1">5 ATM + IP68</dd></div>
+              <div><dt data-i18n="specs.g5k2">Profondeur</dt><dd data-i18n="specs.g5v2">Jusqu'à ~50 m</dd></div>
+              <div><dt data-i18n="specs.g5k3">Au quotidien</dt><dd data-i18n="specs.g5v3">Douche, mains, natation</dd></div>
+            </dl>
+          </article>
+          <article class="spec-card">
+            <h3 data-i18n="specs.g6Title">Connectivité & app</h3>
+            <dl>
+              <div><dt data-i18n="specs.g6k1">Connexion</dt><dd data-i18n="specs.g6v1">Bluetooth Low Energy</dd></div>
+              <div><dt data-i18n="specs.g6k2">Compatibilité</dt><dd data-i18n="specs.g6v2">iOS 13+ · Android 8+</dd></div>
+              <div><dt data-i18n="specs.g6k3">Langues de l'app</dt><dd data-i18n="specs.g6v3">36 langues, dont le français</dd></div>
+              <div><dt data-i18n="specs.g6k4">Synchronisation</dt><dd data-i18n="specs.g6v4">Apple Santé · Health Connect</dd></div>
+            </dl>
+          </article>
+        </div>
+        <div class="spec-box reveal">
+          <h3 data-i18n="specs.boxTitle">Dans la boîte</h3>
+          <p data-i18n="specs.boxBody">Bague connectée · boîtier de recharge · câble USB · manuel d'utilisation · certificat de contrôle qualité.</p>
+        </div>
+        <p class="spec-note reveal" data-i18n="specs.note">
+          Les estimations de pression artérielle, glycémie et composition sanguine sont fournies à titre purement indicatif et ne remplacent pas un dispositif médical homologué.
+        </p>
       </section>
 
       <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
@@ -590,7 +820,7 @@
                 <label class="color-option">
                   <input type="radio" name="color" value="Noir" checked />
                   <span class="ring-swatch" aria-hidden="true">
-                    <img class="ring-photo" src="./assets/ring-noir.png" alt="" onerror="this.remove()" />
+                    <img class="ring-photo" src="./assets/ring-black.png" alt="" loading="lazy" onerror="this.remove()" />
                     <svg viewBox="0 0 64 64" class="ring-svg"><defs><linearGradient id="mNoir" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b6b70"/><stop offset=".38" stop-color="#242427"/><stop offset=".72" stop-color="#070708"/><stop offset="1" stop-color="#3a3a3e"/></linearGradient></defs><circle cx="32" cy="32" r="20" fill="none" stroke="url(#mNoir)" stroke-width="11"/><path d="M18.5 16.5 A20 20 0 0 1 45.5 16.5" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="2.2" stroke-linecap="round"/></svg>
                   </span>
                   <span class="color-name" data-i18n="pricing.colorBlack">Noir</span>
@@ -598,7 +828,7 @@
                 <label class="color-option">
                   <input type="radio" name="color" value="Or" />
                   <span class="ring-swatch" aria-hidden="true">
-                    <img class="ring-photo" src="./assets/ring-or.png" alt="" onerror="this.remove()" />
+                    <img class="ring-photo" src="./assets/ring-gold.png" alt="" loading="lazy" onerror="this.remove()" />
                     <svg viewBox="0 0 64 64" class="ring-svg"><defs><linearGradient id="mOr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0c4"/><stop offset=".4" stop-color="#e2b85f"/><stop offset=".72" stop-color="#9c7320"/><stop offset="1" stop-color="#f0d28a"/></linearGradient></defs><circle cx="32" cy="32" r="20" fill="none" stroke="url(#mOr)" stroke-width="11"/><path d="M18.5 16.5 A20 20 0 0 1 45.5 16.5" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.2" stroke-linecap="round"/></svg>
                   </span>
                   <span class="color-name" data-i18n="pricing.colorGold">Or</span>
@@ -606,7 +836,7 @@
                 <label class="color-option">
                   <input type="radio" name="color" value="Argent" />
                   <span class="ring-swatch" aria-hidden="true">
-                    <img class="ring-photo" src="./assets/ring-argent.png" alt="" onerror="this.remove()" />
+                    <img class="ring-photo" src="./assets/ring-silver.png" alt="" loading="lazy" onerror="this.remove()" />
                     <svg viewBox="0 0 64 64" class="ring-svg"><defs><linearGradient id="mArg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".4" stop-color="#dcdce0"/><stop offset=".72" stop-color="#9a9aa1"/><stop offset="1" stop-color="#ececf0"/></linearGradient></defs><circle cx="32" cy="32" r="20" fill="none" stroke="url(#mArg)" stroke-width="11"/><path d="M18.5 16.5 A20 20 0 0 1 45.5 16.5" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2.2" stroke-linecap="round"/></svg>
                   </span>
                   <span class="color-name" data-i18n="pricing.colorSilver">Argent</span>
@@ -649,6 +879,14 @@
         <details class="reveal reveal-delay-2">
           <summary data-i18n="faq.q3">Pourquoi une bague plutôt qu'une montre?</summary>
           <p data-i18n="faq.a3">La bague est plus discrète, plus confortable la nuit et mieux placée pour certaines mesures passives.</p>
+        </details>
+        <details class="reveal reveal-delay-3">
+          <summary data-i18n="faq.q4">Compatible avec mon téléphone?</summary>
+          <p data-i18n="faq.a4">Oui, en Bluetooth Low Energy avec iOS 13+ et Android 8+. À noter : HarmonyOS 5.0 et HarmonyOS « pur » ne sont pas encore pris en charge (uniquement les versions antérieures à 5.0).</p>
+        </details>
+        <details class="reveal reveal-delay-3">
+          <summary data-i18n="faq.q5">Puis-je la porter sous la douche ou en nageant?</summary>
+          <p data-i18n="faq.a5">Oui. Avec une étanchéité 5 ATM + IP68 (~50 m), vous pouvez la garder pour vous laver les mains, prendre une douche ou nager.</p>
         </details>
       </section>
     </main>
@@ -830,6 +1068,7 @@
           "language.aria": "Choix de langue",
           "nav.experience": "Expérience",
           "nav.health": "Santé",
+          "nav.specs": "Spécifications",
           "nav.compare": "Comparer",
           "nav.preorder": "Précommande",
           "nav.reserve": "Réserver",
@@ -889,13 +1128,18 @@
           "journey.eveningBody": "Une recommandation simple pour préserver votre récupération avant la prochaine nuit.",
           "health.eyebrow": "Capteurs",
           "health.title": "Des signaux utiles, pas du bruit.",
-          "health.body": "Vitarinq combine PPG multi-longueurs d'onde, accéléromètre basse consommation et suivi thermique pour produire une vue continue de votre état physiologique.",
+          "health.body": "Vitarinq combine PPG multi-longueurs d'onde, accéléromètre 3 axes et un ECG échantillonné à 500 Hz pour produire une vue continue de votre physiologie — jusqu'à l'analyse fine du rythme nocturne (diagramme de Lorenz, mesuré entre 0 h et 6 h).",
           "health.metricsAria": "Exemples de mesures",
           "health.metric1": "tendance 7 jours",
           "health.metricSleep": "Sommeil",
           "health.metric2": "score de nuit",
           "health.metricReady": "Optimal",
           "health.metric3": "entraînement possible",
+          "health.hrvSub": "équilibre nerveux",
+          "health.stress": "Stress",
+          "health.statusGood": "Très bon",
+          "health.statusRelaxed": "Détente",
+          "health.statusNormal": "Normal",
           "app.eyebrow": "Application",
           "app.title": "Une lecture claire, inspirée de vos vrais écrans santé.",
           "app.body": "L'interface Vitarinq met les indicateurs clés en cartes rapides: sommeil, fréquence cardiaque, HRV, SpO2, stress, activité et micro-examen. Les données sensibles restent lisibles sans transformer l'app en tableau clinique.",
@@ -927,11 +1171,11 @@
           "design.card1Title": "Titane microbillé",
           "design.card1Body": "Finition graphite, argent ou champagne avec intérieur hypoallergénique poli miroir.",
           "design.card2Title": "Charge compacte",
-          "design.card2Body": "Un dock rond noir, stable et compact, pensé pour poser la bague sans effort chaque semaine.",
+          "design.card2Body": "Un boîtier rond en aluminium, stable et compact : recharge complète en ~1 heure pour reposer la bague sans effort chaque semaine.",
           "design.card3Title": "7 jours d'autonomie",
           "design.card3Body": "Jusqu'à 7 jours sur une seule charge: portez la bague en continu, sans souci de batterie.",
           "design.card4Title": "App claire",
-          "design.card4Body": "Insights quotidiens, historique, exports et mode privé pour garder la main sur vos données.",
+          "design.card4Body": "Insights quotidiens, historique, exports, mises à jour sans fil (OTA) et mode privé pour garder la main sur vos données.",
           "compare.eyebrow": "Positionnement",
           "compare.title": "Une bague santé premium, claire, élégante et vraiment discrète.",
           "compare.body": "La page met l'accent sur ce qui rassure avant l'achat: bénéfices santé, mesures concrètes, autonomie, protection des données, sizing et prix early access.",
@@ -982,7 +1226,85 @@
           "faq.q2": "Quand peut-on livrer?",
           "faq.a2": "Les premières livraisons se feront par ordre de précommande, selon le stock disponible. Plus tôt vous réservez, plus tôt vous recevez.",
           "faq.q3": "Pourquoi une bague plutôt qu'une montre?",
-          "faq.a3": "La bague est plus discrète, plus confortable la nuit et mieux placée pour certaines mesures passives."
+          "faq.a3": "La bague est plus discrète, plus confortable la nuit et mieux placée pour certaines mesures passives.",
+          "faq.q4": "Compatible avec mon téléphone?",
+          "faq.a4": "Oui, en Bluetooth Low Energy avec iOS 13+ et Android 8+. À noter : HarmonyOS 5.0 et HarmonyOS « pur » ne sont pas encore pris en charge (uniquement les versions antérieures à 5.0).",
+          "faq.q5": "Puis-je la porter sous la douche ou en nageant?",
+          "faq.a5": "Oui. Avec une étanchéité 5 ATM + IP68 (~50 m), vous pouvez la garder pour vous laver les mains, prendre une douche ou nager.",
+          "specs.eyebrow": "Spécifications",
+          "specs.title": "La fiche technique, sans le jargon.",
+          "specs.body": "Tout ce qui tient dans un anneau de quelques grammes : capteurs de précision, autonomie d'une semaine et une vraie résistance à l'eau.",
+          "specs.aria": "Spécifications techniques",
+          "specs.g1Title": "Matériaux & finition",
+          "specs.g1k1": "Surface extérieure",
+          "specs.g1v1": "Alliage de titane",
+          "specs.g1k2": "Structure interne",
+          "specs.g1v2": "Résine époxy, intérieur hypoallergénique",
+          "specs.g1k3": "Finitions",
+          "specs.g1v3": "Noir graphite · Argent · Champagne",
+          "specs.g2Title": "Santé avancée",
+          "specs.g2k1": "ECG",
+          "specs.g2v1": "Échantillonnage 500 Hz",
+          "specs.g2k2": "Stress (EDA)",
+          "specs.g2v2": "Activité électrodermale",
+          "specs.g2k3": "FC + HRV · SpO₂",
+          "specs.g2v3": "Récupération & oxygène",
+          "specs.g2k4": "Analyse nocturne",
+          "specs.g2v4": "Diagramme de Lorenz · 0 h–6 h",
+          "specs.g3Title": "Capteurs",
+          "specs.g3k1": "Optique",
+          "specs.g3v1": "Double PPG multi-longueurs d'onde",
+          "specs.g3k2": "Mouvement",
+          "specs.g3v2": "Accéléromètre 3 axes",
+          "specs.g3k3": "Processeur",
+          "specs.g3v3": "Puce dédiée basse consommation",
+          "specs.g4Title": "Autonomie & charge",
+          "specs.g4k1": "Autonomie",
+          "specs.g4v1": "4 à 7 jours",
+          "specs.g4k2": "Recharge complète",
+          "specs.g4v2": "~1 heure (0 → 100 %)",
+          "specs.g4k3": "Boîtier de charge",
+          "specs.g4v3": "Aluminium · USB",
+          "specs.g4k4": "Mises à jour",
+          "specs.g4v4": "Sans fil (OTA)",
+          "specs.g5Title": "Résistance",
+          "specs.g5k1": "Étanchéité",
+          "specs.g5v1": "5 ATM + IP68",
+          "specs.g5k2": "Profondeur",
+          "specs.g5v2": "Jusqu'à ~50 m",
+          "specs.g5k3": "Au quotidien",
+          "specs.g5v3": "Douche, mains, natation",
+          "specs.g6Title": "Connectivité & app",
+          "specs.g6k1": "Connexion",
+          "specs.g6v1": "Bluetooth Low Energy",
+          "specs.g6k2": "Compatibilité",
+          "specs.g6v2": "iOS 13+ · Android 8+",
+          "specs.g6k3": "Langues de l'app",
+          "specs.g6v3": "36 langues, dont le français",
+          "specs.g6k4": "Synchronisation",
+          "specs.g6v4": "Apple Santé · Health Connect",
+          "specs.boxTitle": "Dans la boîte",
+          "specs.boxBody": "Bague connectée · boîtier de recharge · câble USB · manuel d'utilisation · certificat de contrôle qualité.",
+          "specs.note": "Les estimations de pression artérielle, glycémie et composition sanguine sont fournies à titre purement indicatif et ne remplacent pas un dispositif médical homologué.",
+          "sleep.eyebrow": "Sommeil",
+          "sleep.title": "Votre nuit, décodée par stades.",
+          "sleep.body": "Réveils, sommeil paradoxal, léger et profond : Vitarinq reconstitue l'architecture complète de votre nuit et la traduit en un score de qualité clair, chaque matin.",
+          "sleep.ringAria": "8 heures 8 minutes de sommeil, qualité très bonne",
+          "sleep.ringSub": "de sommeil",
+          "sleep.qualityLabel": "Qualité de la nuit",
+          "sleep.qualityValue": "Très bon",
+          "sleep.longLabel": "Long sommeil",
+          "sleep.schedule": "nuit du 31 mai",
+          "sleep.stageAwake": "Réveillé",
+          "sleep.durAwake": "0 m",
+          "sleep.stageRem": "Sommeil paradoxal",
+          "sleep.durRem": "26 m",
+          "sleep.stageLight": "Léger",
+          "sleep.durLight": "4 h 47 m",
+          "sleep.stageDeep": "Profond",
+          "sleep.durDeep": "2 h 55 m",
+          "sleep.trendLabel": "Tendance · moyenne",
+          "sleep.trendDelta": "▲ +11 min cette semaine"
         },
         en: {
           "meta.description": "Vitarinq, the premium smart ring for sleep, recovery, activity and vital trends in an elegant daily form.",
@@ -991,6 +1313,7 @@
           "language.aria": "Language switcher",
           "nav.experience": "Experience",
           "nav.health": "Health",
+          "nav.specs": "Specs",
           "nav.compare": "Compare",
           "nav.preorder": "Preorder",
           "nav.reserve": "Reserve",
@@ -1050,13 +1373,18 @@
           "journey.eveningBody": "One clear recommendation helps protect recovery before the next night.",
           "health.eyebrow": "Sensors",
           "health.title": "Useful signals, not noise.",
-          "health.body": "Vitarinq combines multi-wavelength PPG, a low-power accelerometer and thermal tracking to build a continuous view of your physiological state.",
+          "health.body": "Vitarinq combines multi-wavelength PPG, a 3-axis accelerometer and a 500 Hz ECG to build a continuous view of your physiology — down to fine analysis of your nighttime rhythm (Lorenz plot, measured between midnight and 6 AM).",
           "health.metricsAria": "Example metrics",
           "health.metric1": "7-day trend",
           "health.metricSleep": "Sleep",
           "health.metric2": "night score",
           "health.metricReady": "Optimal",
           "health.metric3": "training possible",
+          "health.hrvSub": "nervous balance",
+          "health.stress": "Stress",
+          "health.statusGood": "Very good",
+          "health.statusRelaxed": "Relaxed",
+          "health.statusNormal": "Normal",
           "app.eyebrow": "Application",
           "app.title": "A clear health view inspired by real app screens.",
           "app.body": "The Vitarinq interface turns key indicators into fast cards: sleep, heart rate, HRV, SpO2, stress, activity and quick checkups. Sensitive data stays readable without making the app feel clinical.",
@@ -1088,11 +1416,11 @@
           "design.card1Title": "Micro-blasted titanium",
           "design.card1Body": "Graphite, silver or champagne finish with a mirror-polished hypoallergenic inner surface.",
           "design.card2Title": "Compact charging",
-          "design.card2Body": "A stable round black dock designed to make weekly charging effortless.",
+          "design.card2Body": "A stable, compact round aluminum case: full charge in ~1 hour to rest the ring effortlessly each week.",
           "design.card3Title": "7-day battery life",
           "design.card3Body": "Up to 7 days on a single charge: wear the ring non-stop, with zero battery worries.",
           "design.card4Title": "Clear app",
-          "design.card4Body": "Daily insights, history, exports and private mode keep you in control of your data.",
+          "design.card4Body": "Daily insights, history, exports, over-the-air (OTA) updates and private mode keep you in control of your data.",
           "compare.eyebrow": "Positioning",
           "compare.title": "A premium health ring that feels clear, elegant and truly discreet.",
           "compare.body": "The page focuses on the purchase signals that matter: health benefits, concrete metrics, battery life, privacy, sizing and early-access pricing.",
@@ -1143,7 +1471,85 @@
           "faq.q2": "When can it ship?",
           "faq.a2": "First deliveries follow preorder order, based on available stock. The earlier you reserve, the earlier you receive.",
           "faq.q3": "Why a ring instead of a watch?",
-          "faq.a3": "A ring is more discreet, more comfortable at night and better positioned for some passive measurements."
+          "faq.a3": "A ring is more discreet, more comfortable at night and better positioned for some passive measurements.",
+          "faq.q4": "Is it compatible with my phone?",
+          "faq.a4": "Yes, over Bluetooth Low Energy with iOS 13+ and Android 8+. Note: HarmonyOS 5.0 and “pure” HarmonyOS are not yet supported (only versions below 5.0).",
+          "faq.q5": "Can I wear it in the shower or while swimming?",
+          "faq.a5": "Yes. With 5 ATM + IP68 water resistance (~50 m), you can keep it on to wash your hands, shower or swim.",
+          "specs.eyebrow": "Specifications",
+          "specs.title": "The spec sheet, without the jargon.",
+          "specs.body": "Everything packed into a ring weighing a few grams: precision sensors, a week of battery life and real water resistance.",
+          "specs.aria": "Technical specifications",
+          "specs.g1Title": "Materials & finish",
+          "specs.g1k1": "Outer surface",
+          "specs.g1v1": "Titanium alloy",
+          "specs.g1k2": "Inner structure",
+          "specs.g1v2": "Epoxy resin, hypoallergenic interior",
+          "specs.g1k3": "Finishes",
+          "specs.g1v3": "Graphite black · Silver · Champagne",
+          "specs.g2Title": "Advanced health",
+          "specs.g2k1": "ECG",
+          "specs.g2v1": "500 Hz sampling",
+          "specs.g2k2": "Stress (EDA)",
+          "specs.g2v2": "Electrodermal activity",
+          "specs.g2k3": "HR + HRV · SpO₂",
+          "specs.g2v3": "Recovery & oxygen",
+          "specs.g2k4": "Nighttime analysis",
+          "specs.g2v4": "Lorenz plot · 12 AM–6 AM",
+          "specs.g3Title": "Sensors",
+          "specs.g3k1": "Optical",
+          "specs.g3v1": "Dual multi-wavelength PPG",
+          "specs.g3k2": "Motion",
+          "specs.g3v2": "3-axis accelerometer",
+          "specs.g3k3": "Processor",
+          "specs.g3v3": "Dedicated low-power chip",
+          "specs.g4Title": "Battery & charging",
+          "specs.g4k1": "Battery life",
+          "specs.g4v1": "4 to 7 days",
+          "specs.g4k2": "Full charge",
+          "specs.g4v2": "~1 hour (0 → 100%)",
+          "specs.g4k3": "Charging case",
+          "specs.g4v3": "Aluminum · USB",
+          "specs.g4k4": "Updates",
+          "specs.g4v4": "Over-the-air (OTA)",
+          "specs.g5Title": "Durability",
+          "specs.g5k1": "Water resistance",
+          "specs.g5v1": "5 ATM + IP68",
+          "specs.g5k2": "Depth",
+          "specs.g5v2": "Up to ~50 m",
+          "specs.g5k3": "Everyday",
+          "specs.g5v3": "Shower, hands, swimming",
+          "specs.g6Title": "Connectivity & app",
+          "specs.g6k1": "Connection",
+          "specs.g6v1": "Bluetooth Low Energy",
+          "specs.g6k2": "Compatibility",
+          "specs.g6v2": "iOS 13+ · Android 8+",
+          "specs.g6k3": "App languages",
+          "specs.g6v3": "36 languages, including French",
+          "specs.g6k4": "Sync",
+          "specs.g6v4": "Apple Health · Health Connect",
+          "specs.boxTitle": "In the box",
+          "specs.boxBody": "Smart ring · charging case · USB cable · user manual · quality-control certificate.",
+          "specs.note": "Blood pressure, blood glucose and blood-composition estimates are provided for indicative purposes only and do not replace a certified medical device.",
+          "sleep.eyebrow": "Sleep",
+          "sleep.title": "Your night, decoded by stage.",
+          "sleep.body": "Awake, REM, light and deep sleep: Vitarinq rebuilds the full architecture of your night and turns it into a clear quality score every morning.",
+          "sleep.ringAria": "8 hours 8 minutes of sleep, very good quality",
+          "sleep.ringSub": "of sleep",
+          "sleep.qualityLabel": "Night quality",
+          "sleep.qualityValue": "Very good",
+          "sleep.longLabel": "Total sleep",
+          "sleep.schedule": "night of May 31",
+          "sleep.stageAwake": "Awake",
+          "sleep.durAwake": "0 m",
+          "sleep.stageRem": "REM sleep",
+          "sleep.durRem": "26 m",
+          "sleep.stageLight": "Light",
+          "sleep.durLight": "4 h 47 m",
+          "sleep.stageDeep": "Deep",
+          "sleep.durDeep": "2 h 55 m",
+          "sleep.trendLabel": "Trend · average",
+          "sleep.trendDelta": "▲ +11 min this week"
         }
       };
 
