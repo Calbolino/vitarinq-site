@@ -2259,6 +2259,10 @@ details p,
   background:
     linear-gradient(135deg, #eee4d5 0%, #f8f3e9 55%, #dfd1bb 100%);
   color: var(--ink);
+  /* Light island inside a color-scheme:dark page: opt this section into light
+     UA rendering so native controls (the email input) + autofill paint light,
+     not the inherited dark scheme. */
+  color-scheme: light;
   position: relative;
 }
 
@@ -2384,6 +2388,21 @@ details p,
   outline: none;
   border-color: var(--champagne);
   box-shadow: 0 0 0 3px rgba(215, 178, 109, 0.28);
+}
+
+/* Autofill: force the field to stay cream-on-light with dark text. Without this,
+   the browser's autofill paints a dark background here (the page is color-scheme:dark),
+   which clashes with — or hides text on — the cream price card. */
+.preorder-form input[type="email"]:-webkit-autofill,
+.preorder-form input[type="email"]:-webkit-autofill:hover {
+  -webkit-text-fill-color: var(--ink);
+  -webkit-box-shadow: 0 0 0 1000px #f4f2ec inset;
+  caret-color: var(--ink);
+}
+.preorder-form input[type="email"]:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--ink);
+  -webkit-box-shadow: 0 0 0 1000px #f4f2ec inset, 0 0 0 3px rgba(215, 178, 109, 0.28);
+  caret-color: var(--ink);
 }
 
 /* Submit button: dark fill so it reads on the cream price card. */
@@ -2523,6 +2542,11 @@ details p {
 ::selection {
   background: rgba(215, 178, 109, 0.28);
   color: var(--white);
+}
+/* On the light pricing island, white selected text is invisible — use dark ink. */
+.pricing ::selection {
+  background: rgba(215, 178, 109, 0.45);
+  color: var(--ink);
 }
 
 /* ─── Responsive ─── */
